@@ -177,6 +177,18 @@ public class Login extends javax.swing.JFrame {
     
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
         // TODO add your handling code here
+    
+        
+        String cardnumber = cardTextField.getText();
+        String pin = new String(pinPasswordField.getPassword());
+        
+      
+        if (cardnumber.isEmpty() || pin.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Please enter your Card No and PIN.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        
     }//GEN-LAST:event_btnSignInActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
@@ -186,6 +198,11 @@ public class Login extends javax.swing.JFrame {
 
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
         // TODO add your handling code here:
+      
+        Signin registrationPage = new Signin();
+        registrationPage.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_btnSignUpActionPerformed
 
     private void cardTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardTextFieldActionPerformed
