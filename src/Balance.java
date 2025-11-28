@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author yaraw
+ * @author yara
  */
 public class Balance extends javax.swing.JFrame {
 
@@ -43,21 +43,44 @@ public class Balance extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btnBack = new javax.swing.JButton();
+        yrCurr = new javax.swing.JLabel();
+        atm = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnBack.setText("Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBack);
+        btnBack.setBounds(390, 620, 150, 30);
+
+        yrCurr.setBackground(new java.awt.Color(0, 0, 0));
+        yrCurr.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        yrCurr.setForeground(new java.awt.Color(255, 255, 255));
+        yrCurr.setText("Your Current Account Balance Is EP 6555");
+        getContentPane().add(yrCurr);
+        yrCurr.setBounds(180, 360, 360, 22);
+
+        atm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/atm.jpg"))); // NOI18N
+        atm.setText("jLabel1");
+        getContentPane().add(atm);
+        atm.setBounds(0, 0, 960, 1080);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+MainPage frame2 = new MainPage(); 
+frame2.setVisible(true);               
+this.dispose();        
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,5 +118,8 @@ public class Balance extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel atm;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JLabel yrCurr;
     // End of variables declaration//GEN-END:variables
 }
