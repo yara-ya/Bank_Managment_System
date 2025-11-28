@@ -45,7 +45,6 @@ public class Balance extends javax.swing.JFrame {
 
         btnBack = new javax.swing.JButton();
         yrCurr = new javax.swing.JLabel();
-        atm = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -59,19 +58,14 @@ public class Balance extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnBack);
-        btnBack.setBounds(390, 620, 150, 30);
+        btnBack.setBounds(360, 510, 150, 30);
 
         yrCurr.setBackground(new java.awt.Color(0, 0, 0));
-        yrCurr.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        yrCurr.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         yrCurr.setForeground(new java.awt.Color(255, 255, 255));
         yrCurr.setText("Your Current Account Balance Is EP 6555");
         getContentPane().add(yrCurr);
-        yrCurr.setBounds(180, 360, 360, 22);
-
-        atm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/atm.jpg"))); // NOI18N
-        atm.setText("jLabel1");
-        getContentPane().add(atm);
-        atm.setBounds(0, 0, 960, 1080);
+        yrCurr.setBounds(170, 300, 360, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,7 +112,6 @@ this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel atm;
     private javax.swing.JButton btnBack;
     private javax.swing.JLabel yrCurr;
     // End of variables declaration//GEN-END:variables
