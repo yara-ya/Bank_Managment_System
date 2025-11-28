@@ -63,7 +63,7 @@ public class Balance extends javax.swing.JFrame {
         yrCurr.setBackground(new java.awt.Color(0, 0, 0));
         yrCurr.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         yrCurr.setForeground(new java.awt.Color(255, 255, 255));
-        yrCurr.setText("Your Current Account Balance Is EP 6555");
+        yrCurr.setText("Your Current Account Balance Is LE 6555");
         getContentPane().add(yrCurr);
         yrCurr.setBounds(170, 300, 360, 20);
 
