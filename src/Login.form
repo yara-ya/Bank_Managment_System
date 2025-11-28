@@ -59,9 +59,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Component id="lblWelcom" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="cardTextField" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="lbbCardNo" min="-2" pref="30" max="-2" attributes="0"/>
@@ -69,7 +69,7 @@
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="lblPin" pref="30" max="32767" attributes="0"/>
+                      <Component id="lblPin" pref="38" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
