@@ -1,7 +1,8 @@
-
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import java.awt.event.*;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -12,7 +13,7 @@ import javax.swing.JLabel;
  *
  * @author yaraw
  */
-public class PinChange extends javax.swing.JFrame {
+public class PinChange extends javax.swing.JFrame  implements ActionListener{
 
     /**
      * Creates new form PinChange
@@ -30,9 +31,40 @@ public class PinChange extends javax.swing.JFrame {
         JLabel label = new JLabel(i3);
         label.setBounds(0, 0, 900,900);
         add(label);
+        btnChg.addActionListener(this);
+        btnBack.addActionListener(this);
         
         setTitle("PIN CHANGE");
+        
     }
+@Override
+public void actionPerformed(ActionEvent e){
+
+    // زرار Change
+    if(e.getSource() == btnChg){
+
+        String newPin = new String(npin.getPassword());
+        String rePin = new String(jPasswordField1.getPassword());
+
+        if(newPin.equals("") || rePin.equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter PIN!");
+            return;
+        }
+
+        if(!newPin.equals(rePin)){
+            JOptionPane.showMessageDialog(null, "PINs do NOT match!");
+        } else {
+            JOptionPane.showMessageDialog(null, "PIN changed successfully!");
+        }
+    }
+
+    // زرار Back — يفتح MainPage
+    if(e.getSource() == btnBack){
+        MainPage mp = new MainPage(); // افتح الصفحة
+        mp.setVisible(true);
+        this.dispose();               // اقفل دي
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,21 +75,75 @@ public class PinChange extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        npin = new javax.swing.JPasswordField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        btnChg = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        rEntPIN = new javax.swing.JLabel();
+        nwPIN = new javax.swing.JLabel();
+        chgPIN = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        npin.setBackground(new java.awt.Color(255, 255, 255));
+        npin.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(npin);
+        npin.setBounds(310, 320, 200, 26);
+
+        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.setForeground(new java.awt.Color(0, 0, 0));
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jPasswordField1);
+        jPasswordField1.setBounds(310, 350, 200, 26);
+
+        btnChg.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnChg.setText("Change");
+        btnChg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChgActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnChg);
+        btnChg.setBounds(360, 480, 150, 30);
+
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnBack.setText("Back");
+        getContentPane().add(btnBack);
+        btnBack.setBounds(360, 510, 150, 30);
+
+        rEntPIN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rEntPIN.setForeground(new java.awt.Color(255, 255, 255));
+        rEntPIN.setText("Re-Enter New PIN :");
+        getContentPane().add(rEntPIN);
+        rEntPIN.setBounds(170, 350, 127, 20);
+
+        nwPIN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        nwPIN.setForeground(new java.awt.Color(255, 255, 255));
+        nwPIN.setText("New PIN :");
+        getContentPane().add(nwPIN);
+        nwPIN.setBounds(170, 320, 80, 30);
+
+        chgPIN.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        chgPIN.setForeground(new java.awt.Color(255, 255, 255));
+        chgPIN.setText("CHANGE YOUR PIN ");
+        getContentPane().add(chgPIN);
+        chgPIN.setBounds(260, 290, 150, 22);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void btnChgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChgActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnChgActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,5 +181,12 @@ public class PinChange extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnChg;
+    private javax.swing.JLabel chgPIN;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField npin;
+    private javax.swing.JLabel nwPIN;
+    private javax.swing.JLabel rEntPIN;
     // End of variables declaration//GEN-END:variables
 }
