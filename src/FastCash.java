@@ -2,7 +2,7 @@
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
+import javax.swing.JOptionPane;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -13,7 +13,7 @@ import javax.swing.JLabel;
  * @author yaraw
  */
 public class FastCash extends javax.swing.JFrame {
-
+    int balance=6555;
     /**
      * Creates new form FastCash
      */
@@ -23,7 +23,41 @@ public class FastCash extends javax.swing.JFrame {
         this.setSize(900, 900);
         setLocation(300, 0);
         setVisible(true);
-        
+         button100.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            button100ActionPerformed(evt);
+        }
+    });
+
+    button1000.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            button1000ActionPerformed(evt);
+        }
+    });
+
+    button2000.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            button2000ActionPerformed(evt);
+        }
+    });
+
+    button5000.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            button5000ActionPerformed(evt);
+        }
+    });
+
+    button10000.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            button10000ActionPerformed(evt);
+        }
+    });
+
+    button4break.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            button4breakActionPerformed(evt);
+        }
+    });
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));
         Image i2 =i1.getImage().getScaledInstance(900, 900, Image.SCALE_DEFAULT);
          ImageIcon i3 = new ImageIcon(i2);
@@ -43,22 +77,112 @@ public class FastCash extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        labeltitle = new javax.swing.JLabel();
+        button500 = new javax.swing.JButton();
+        button2000 = new javax.swing.JButton();
+        button10000 = new javax.swing.JButton();
+        button4break = new javax.swing.JButton();
+        button1000 = new javax.swing.JButton();
+        button5000 = new javax.swing.JButton();
+        button100 = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        labeltitle.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        labeltitle.setForeground(new java.awt.Color(255, 255, 255));
+        labeltitle.setText("SELECT WITHDRAWAL AMOUNT");
+        getContentPane().add(labeltitle);
+        labeltitle.setBounds(210, 290, 290, 30);
+
+        button500.setBackground(new java.awt.Color(204, 204, 255));
+        button500.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        button500.setText("500 LE");
+        button500.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button500ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(button500);
+        button500.setBounds(350, 370, 150, 30);
+
+        button2000.setBackground(new java.awt.Color(204, 204, 255));
+        button2000.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        button2000.setText("2000 LE");
+        getContentPane().add(button2000);
+        button2000.setBounds(350, 410, 150, 30);
+
+        button10000.setBackground(new java.awt.Color(204, 204, 255));
+        button10000.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        button10000.setText("10000 LE");
+        getContentPane().add(button10000);
+        button10000.setBounds(350, 450, 150, 30);
+
+        button4break.setBackground(new java.awt.Color(204, 204, 255));
+        button4break.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        button4break.setText("BACK");
+        getContentPane().add(button4break);
+        button4break.setBounds(350, 510, 150, 30);
+
+        button1000.setBackground(new java.awt.Color(204, 204, 255));
+        button1000.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        button1000.setText("1000 LE");
+        getContentPane().add(button1000);
+        button1000.setBounds(170, 410, 150, 30);
+
+        button5000.setBackground(new java.awt.Color(204, 204, 255));
+        button5000.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        button5000.setText("5000 LE");
+        getContentPane().add(button5000);
+        button5000.setBounds(170, 450, 150, 30);
+
+        button100.setBackground(new java.awt.Color(204, 204, 255));
+        button100.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        button100.setText("100 LE");
+        getContentPane().add(button100);
+        button100.setBounds(170, 370, 150, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+private void withdraw(int amount) {
+    if (amount > balance) {
+        JOptionPane.showMessageDialog(this, "Insufficient balance!");
+    } else {
+        balance -= amount;
+        JOptionPane.showMessageDialog(this, "You have withdrawn " + amount + " LE.\nYour current balance is: " + balance + " LE.");
+    }
+}
 
+    private void button500ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button500ActionPerformed
+            // TODO add private void btn100ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    withdraw(500);
+}
+    private void button100ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    withdraw(100);
+    }//GEN-LAST:event_button500ActionPerformed
+
+private void button1000ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    withdraw(1000);
+}
+
+private void button2000ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    withdraw(2000);
+}
+
+private void button5000ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    withdraw(5000);
+}
+
+private void button10000ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    withdraw(10000);
+}
+
+private void button4breakActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    // إرجاع للنافذة السابقة أو إغلاق
+    this.setVisible(false);
+     new MainPage().setVisible(true);
+    // هنا ممكن تضيف فتح JFrame آخر لو عندك
+}
     /**
      * @param args the command line arguments
      */
@@ -95,5 +219,13 @@ public class FastCash extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton button100;
+    private javax.swing.JButton button1000;
+    private javax.swing.JButton button10000;
+    private javax.swing.JButton button2000;
+    private javax.swing.JButton button4break;
+    private javax.swing.JButton button500;
+    private javax.swing.JButton button5000;
+    private javax.swing.JLabel labeltitle;
     // End of variables declaration//GEN-END:variables
 }
