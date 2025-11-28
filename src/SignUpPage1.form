@@ -76,15 +76,17 @@
                               </Group>
                               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="DateChooser" max="32767" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="ckbMale" min="-2" pref="64" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-                                      <Component id="ckbFemale" min="-2" pref="98" max="-2" attributes="0"/>
+                                  <Component id="jDateChooser1" pref="410" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="ckbMale" min="-2" pref="64" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                                          <Component id="ckbFemale" min="-2" pref="98" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="txtFatherName" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtName" alignment="0" pref="410" max="32767" attributes="0"/>
+                                      <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="txtFatherName" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtName" alignment="0" pref="410" max="32767" attributes="0"/>
-                                  <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -128,10 +130,10 @@
                   <Component id="lblFatherName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtFatherName" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lblDateOfBirth" min="-2" max="-2" attributes="0"/>
-                  <Component id="DateChooser" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="lblDateOfBirth" max="32767" attributes="0"/>
+                  <Component id="jDateChooser1" pref="30" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -415,7 +417,7 @@
         <Property name="text" type="java.lang.String" value="Date of Birth:"/>
       </Properties>
     </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="DateChooser">
+    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
     </Component>
   </SubComponents>
 </Form>

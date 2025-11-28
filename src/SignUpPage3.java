@@ -373,7 +373,7 @@ try {
     }//GEN-LAST:event_jCheckBox7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+
        
     
     if (buttonGroup1.getSelection() == null) {
@@ -411,7 +411,7 @@ try {
         "Success", JOptionPane.INFORMATION_MESSAGE);
     
     
-    MainPage registrationPage = new MainPage();
+    Deposit registrationPage = new Deposit();
         registrationPage.setVisible(true);
         this.dispose();
 
