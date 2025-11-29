@@ -104,19 +104,19 @@ public class FastCash extends javax.swing.JFrame {
             }
         });
         getContentPane().add(button500);
-        button500.setBounds(350, 370, 150, 30);
+        button500.setBounds(350, 390, 150, 30);
 
         button2000.setBackground(new java.awt.Color(204, 204, 255));
         button2000.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         button2000.setText("2000 LE");
         getContentPane().add(button2000);
-        button2000.setBounds(350, 410, 150, 30);
+        button2000.setBounds(350, 430, 150, 30);
 
         button10000.setBackground(new java.awt.Color(204, 204, 255));
         button10000.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         button10000.setText("10000 LE");
         getContentPane().add(button10000);
-        button10000.setBounds(350, 450, 150, 30);
+        button10000.setBounds(350, 470, 150, 30);
 
         button4break.setBackground(new java.awt.Color(204, 204, 255));
         button4break.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -128,19 +128,19 @@ public class FastCash extends javax.swing.JFrame {
         button1000.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         button1000.setText("1000 LE");
         getContentPane().add(button1000);
-        button1000.setBounds(170, 410, 150, 30);
+        button1000.setBounds(170, 430, 150, 30);
 
         button5000.setBackground(new java.awt.Color(204, 204, 255));
         button5000.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         button5000.setText("5000 LE");
         getContentPane().add(button5000);
-        button5000.setBounds(170, 450, 150, 30);
+        button5000.setBounds(170, 470, 150, 30);
 
         button100.setBackground(new java.awt.Color(204, 204, 255));
         button100.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         button100.setText("100 LE");
         getContentPane().add(button100);
-        button100.setBounds(170, 370, 150, 30);
+        button100.setBounds(170, 390, 150, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
