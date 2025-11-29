@@ -121,12 +121,22 @@ public class FastCash extends javax.swing.JFrame {
         button4break.setBackground(new java.awt.Color(204, 204, 255));
         button4break.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         button4break.setText("BACK");
+        button4break.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button4breakActionPerformed(evt);
+            }
+        });
         getContentPane().add(button4break);
-        button4break.setBounds(350, 510, 150, 30);
+        button4break.setBounds(350, 500, 150, 30);
 
         button1000.setBackground(new java.awt.Color(204, 204, 255));
         button1000.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         button1000.setText("1000 LE");
+        button1000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1000ActionPerformed(evt);
+            }
+        });
         getContentPane().add(button1000);
         button1000.setBounds(170, 430, 150, 30);
 
@@ -160,6 +170,14 @@ private void withdraw(int amount) {
     private void button100ActionPerformed(java.awt.event.ActionEvent evt) {                                          
     withdraw(100);
     }//GEN-LAST:event_button500ActionPerformed
+
+    private void button4breakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4breakActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button4breakActionPerformed
+
+    private void button1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1000ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button1000ActionPerformed
 
 private void button1000ActionPerformed(java.awt.event.ActionEvent evt) {                                          
     withdraw(1000);
