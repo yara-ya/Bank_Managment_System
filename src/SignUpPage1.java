@@ -95,7 +95,6 @@ gbtnMaritalStatues.add(ckbOther);
         txtEmail = new javax.swing.JTextField();
         lblMaritalStatues = new javax.swing.JLabel();
         ckbMarried = new javax.swing.JRadioButton();
-        ckbUnmarried = new javax.swing.JRadioButton();
         ckbOther = new javax.swing.JRadioButton();
         lblCity = new javax.swing.JLabel();
         txtCity = new javax.swing.JTextField();
@@ -107,6 +106,7 @@ gbtnMaritalStatues.add(ckbOther);
         space = new javax.swing.JPanel();
         lblDateOfBirth = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        ckbUnmarried = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("APPLICATION FORM NO.6211\n");
@@ -172,19 +172,14 @@ gbtnMaritalStatues.add(ckbOther);
             }
         });
 
-        gbtnMaritalStatues.add(ckbUnmarried);
-        ckbUnmarried.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        ckbUnmarried.setSelected(true);
-        ckbUnmarried.setText("Unmarried");
-        ckbUnmarried.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ckbUnmarriedActionPerformed(evt);
-            }
-        });
-
         gbtnMaritalStatues.add(ckbOther);
         ckbOther.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ckbOther.setText("Other");
+        ckbOther.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ckbOtherActionPerformed(evt);
+            }
+        });
 
         lblCity.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         lblCity.setText("City:");
@@ -242,6 +237,10 @@ gbtnMaritalStatues.add(ckbOther);
         lblDateOfBirth.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         lblDateOfBirth.setText("Date of Birth:");
 
+        gbtnMaritalStatues.add(ckbUnmarried);
+        ckbUnmarried.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ckbUnmarried.setText("Unmarried");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -266,9 +265,7 @@ gbtnMaritalStatues.add(ckbOther);
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(txtCity, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
                                         .addGap(102, 102, 102))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(btnNextToPage2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtGovernorate, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtGovernorate, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(100, 100, 100)
                                 .addComponent(lblApplicationFormNo))
@@ -283,15 +280,17 @@ gbtnMaritalStatues.add(ckbOther);
                                     .addComponent(lblName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(71, 71, 71)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(ckbMale, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(104, 104, 104)
-                                            .addComponent(ckbFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(txtFatherName)
-                                        .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
-                                        .addComponent(txtEmail)))))
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(ckbMale, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(104, 104, 104)
+                                        .addComponent(ckbFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtFatherName)
+                                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                                    .addComponent(txtEmail)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(252, 252, 252)
+                                .addComponent(btnNextToPage2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(29, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,9 +298,9 @@ gbtnMaritalStatues.add(ckbOther);
                                 .addComponent(lblMaritalStatues)
                                 .addGap(71, 71, 71)
                                 .addComponent(ckbMarried)
-                                .addGap(100, 100, 100)
-                                .addComponent(ckbUnmarried)
-                                .addGap(105, 105, 105)
+                                .addGap(103, 103, 103)
+                                .addComponent(ckbUnmarried, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(87, 87, 87)
                                 .addComponent(ckbOther))
                             .addComponent(lblDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -340,8 +339,8 @@ gbtnMaritalStatues.add(ckbOther);
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMaritalStatues, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ckbMarried, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ckbUnmarried, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ckbOther, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ckbOther, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ckbUnmarried, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCity, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -433,9 +432,9 @@ gbtnMaritalStatues.add(ckbOther);
         // TODO add your handling code here:
     }//GEN-LAST:event_ckbFemaleActionPerformed
 
-    private void ckbUnmarriedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbUnmarriedActionPerformed
+    private void ckbOtherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbOtherActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ckbUnmarriedActionPerformed
+    }//GEN-LAST:event_ckbOtherActionPerformed
 
     /**
      * @param args the command line arguments
