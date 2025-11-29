@@ -85,21 +85,16 @@ public void actionPerformed(ActionEvent e){
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-
-        npin.setBackground(new java.awt.Color(255, 255, 255));
-        npin.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(npin);
-        npin.setBounds(310, 320, 200, 26);
+        npin.setBounds(310, 320, 200, 22);
 
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setForeground(new java.awt.Color(0, 0, 0));
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);
             }
         });
         getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(310, 350, 200, 26);
+        jPasswordField1.setBounds(310, 350, 200, 22);
 
         btnChg.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnChg.setText("Change");
@@ -120,7 +115,7 @@ public void actionPerformed(ActionEvent e){
         rEntPIN.setForeground(new java.awt.Color(255, 255, 255));
         rEntPIN.setText("Re-Enter New PIN :");
         getContentPane().add(rEntPIN);
-        rEntPIN.setBounds(170, 350, 127, 20);
+        rEntPIN.setBounds(167, 350, 130, 20);
 
         nwPIN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         nwPIN.setForeground(new java.awt.Color(255, 255, 255));
