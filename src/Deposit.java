@@ -2,22 +2,16 @@
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import java.util. *;
+import javax.swing.JOptionPane;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-/**
- *
- * @author yaraw
- */
 public class Deposit extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Deposit
-     */
+
+
+  
     public Deposit() {
+        
         initComponents();
         setLayout(null);
         this.setSize(900, 900);
@@ -112,6 +106,28 @@ public class Deposit extends javax.swing.JFrame {
 
     private void btnDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositActionPerformed
         // TODO add your handling code here:
+        try{
+       String amounttext=txtEnterYourDeposit.getText();
+       
+           double depositAmount=Double.parseDouble(amounttext);
+           System.out.println("processing deposit of" +depositAmount);
+           // currentAccount.deposit(depositAmount);
+            MainPage frame2=new MainPage();
+            frame2.setVisible(true);
+            this.dispose();
+        }
+            catch(NumberFormatException e){
+              
+                    
+               JOptionPane.showMessageDialog(this,"please enter valid amount","Input Error",JOptionPane.ERROR_MESSAGE);
+           
+                    
+                    
+                    
+       
+                }
+       
+        
     }//GEN-LAST:event_btnDepositActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
