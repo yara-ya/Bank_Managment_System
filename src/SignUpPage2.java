@@ -264,7 +264,7 @@ public class SignUpPage2 extends javax.swing.JFrame {
         }
 
         
-        if (jComboBox1.getSelectedIndex() == 0 || jComboBox3.getSelectedIndex() == 0 || 
+        if ( jComboBox3.getSelectedIndex() == 0 || 
             jComboBox4.getSelectedIndex() == 0 || jComboBox5.getSelectedIndex() == 0) {
             
             JOptionPane.showMessageDialog(this, "Please select an option for all dropdown fields.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -272,16 +272,10 @@ public class SignUpPage2 extends javax.swing.JFrame {
         }
 
       
-        if (buttonGroup1.getSelection() == null) {
-            JOptionPane.showMessageDialog(this, "Please select Senior Citizen status.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+        
 
        
-        if (buttonGroup2.getSelection() == null) {
-            JOptionPane.showMessageDialog(this, "Please select Existing Account status.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+        
         
         
 
