@@ -55,21 +55,21 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblWelcom = new javax.swing.JLabel();
+        lblAccountManagment = new javax.swing.JLabel();
         lbbCardNo = new javax.swing.JLabel();
         lblPin = new javax.swing.JLabel();
         cardTextField = new javax.swing.JTextField();
-        btnSignIn = new javax.swing.JButton();
+        btnEnter = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
-        btnSignUp = new javax.swing.JButton();
+        btnCreateNewAccount = new javax.swing.JButton();
         pinPasswordField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        lblWelcom.setBackground(new java.awt.Color(255, 255, 255));
-        lblWelcom.setFont(new java.awt.Font("Segoe UI", 1, 43)); // NOI18N
-        lblWelcom.setText("WELCOME TO ATM");
+        lblAccountManagment.setBackground(new java.awt.Color(255, 255, 255));
+        lblAccountManagment.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblAccountManagment.setText("ACCOUNT MANAGMENT");
 
         lbbCardNo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lbbCardNo.setText("Card No:");
@@ -84,13 +84,13 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        btnSignIn.setBackground(new java.awt.Color(0, 0, 0));
-        btnSignIn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnSignIn.setForeground(new java.awt.Color(255, 255, 255));
-        btnSignIn.setText("SIGN IN");
-        btnSignIn.addActionListener(new java.awt.event.ActionListener() {
+        btnEnter.setBackground(new java.awt.Color(0, 0, 0));
+        btnEnter.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnEnter.setForeground(new java.awt.Color(255, 255, 255));
+        btnEnter.setText("ENTER");
+        btnEnter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSignInActionPerformed(evt);
+                btnEnterActionPerformed(evt);
             }
         });
 
@@ -104,13 +104,13 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        btnSignUp.setBackground(new java.awt.Color(0, 0, 0));
-        btnSignUp.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnSignUp.setForeground(new java.awt.Color(255, 255, 255));
-        btnSignUp.setText("SIGN UP");
-        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateNewAccount.setBackground(new java.awt.Color(0, 0, 0));
+        btnCreateNewAccount.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCreateNewAccount.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreateNewAccount.setText("CREATE NEW");
+        btnCreateNewAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSignUpActionPerformed(evt);
+                btnCreateNewAccountActionPerformed(evt);
             }
         });
 
@@ -125,13 +125,13 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblWelcom)
+                .addContainerGap(175, Short.MAX_VALUE)
+                .addComponent(lblAccountManagment)
                 .addGap(109, 109, 109))
             .addGroup(layout.createSequentialGroup()
                 .addGap(140, 140, 140)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCreateNewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblPin, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -139,18 +139,18 @@ public class Login extends javax.swing.JFrame {
                         .addGap(59, 59, 59)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                                 .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(cardTextField)
                             .addComponent(pinPasswordField))))
-                .addGap(0, 137, Short.MAX_VALUE))
+                .addGap(0, 146, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(lblWelcom)
+                .addGap(36, 36, 36)
+                .addComponent(lblAccountManagment)
                 .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cardTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,16 +158,16 @@ public class Login extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblPin, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(lblPin, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
                         .addGap(244, 244, 244))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(pinPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCreateNewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(123, 123, 123))))
         );
 
@@ -175,7 +175,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
+    private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
         // TODO add your handling code here
     
         
@@ -195,21 +195,21 @@ public class Login extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_btnSignInActionPerformed
+    }//GEN-LAST:event_btnEnterActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         cardTextField.setText("");
         pinPasswordField.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
 
-    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
+    private void btnCreateNewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNewAccountActionPerformed
         // TODO add your handling code here:
       
         SignUpPage1 registrationPage = new SignUpPage1();
         registrationPage.setVisible(true);
         this.dispose();
         
-    }//GEN-LAST:event_btnSignUpActionPerformed
+    }//GEN-LAST:event_btnCreateNewAccountActionPerformed
 
     private void cardTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardTextFieldActionPerformed
         // TODO add your handling code here:
@@ -257,12 +257,12 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnSignIn;
-    private javax.swing.JButton btnSignUp;
+    private javax.swing.JButton btnCreateNewAccount;
+    private javax.swing.JButton btnEnter;
     private javax.swing.JTextField cardTextField;
     private javax.swing.JLabel lbbCardNo;
+    private javax.swing.JLabel lblAccountManagment;
     private javax.swing.JLabel lblPin;
-    private javax.swing.JLabel lblWelcom;
     private javax.swing.JPasswordField pinPasswordField;
     // End of variables declaration//GEN-END:variables
 }
