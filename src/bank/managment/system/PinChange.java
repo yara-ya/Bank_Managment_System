@@ -1,3 +1,6 @@
+package bank.managment.system;
+
+import bank.managment.system.MainPage;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;

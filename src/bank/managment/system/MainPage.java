@@ -1,4 +1,11 @@
+package bank.managment.system;
 
+
+import bank.managment.system.Info;
+import bank.managment.system.FastCash;
+import bank.managment.system.Deposit;
+import bank.managment.system.CashWithdrawl;
+import bank.managment.system.Balance;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
