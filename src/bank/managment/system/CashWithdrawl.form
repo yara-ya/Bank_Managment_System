@@ -45,7 +45,7 @@
                       <Component id="BACK" min="-2" pref="150" max="-2" attributes="0"/>
                       <Component id="WITHDRAWL" min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jTextField1" alignment="1" min="-2" pref="352" max="-2" attributes="0"/>
+                  <Component id="txtCash" alignment="1" min="-2" pref="352" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="264" max="-2" attributes="0"/>
           </Group>
@@ -57,8 +57,8 @@
               <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="31" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="jTextField1" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace pref="106" max="32767" attributes="0"/>
+              <Component id="txtCash" min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace pref="109" max="32767" attributes="0"/>
               <Component id="WITHDRAWL" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               <Component id="BACK" min="-2" pref="30" max="-2" attributes="0"/>
@@ -79,9 +79,9 @@
         <Property name="text" type="java.lang.String" value="ENTER THE AMOUNT YOU WANT TO WITHDRAWL"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="txtCash">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCashActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="WITHDRAWL">

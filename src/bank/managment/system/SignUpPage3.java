@@ -9,24 +9,43 @@ package bank.managment.system;
  *
  * @author haidy
  */
-import bank.managment.system.Login;
+
 import bank.managment.system.Deposit;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
-public class SignUpPage3 extends javax.swing.JFrame {
+public class SignUpPage3 extends JFrame implements ActionListener {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SignUpPage3.class.getName());
+    private String formNO;
+    private String pin;
+    private String cardNumber;
 
-    /**
-     * Creates new form signpage3
-     */
-    public SignUpPage3() {
+    
+    public void setFormNo(String formNO){
+    this.formNO = formNO;
+    
+    lblFormNo.setText("Form No: " + formNO);
+}
+
+    public void setPIN(String pin){
+        this.pin = pin;
+    }
+    
+    
+      
+    public SignUpPage3(String cardNumber) {
+    this.cardNumber = cardNumber;
         initComponents();
                 setTitle("NEW ACCOUNT APPLICATION FORM - PAGE 3");
+                
+                
 
         
         this.setSize(850, 800);
@@ -48,12 +67,22 @@ try {
     System.out.println("Error loading icon: " + e.getMessage());
 }
                  setLocationRelativeTo(null);
-                 buttonGroup1.add(jRadioButton1);
-                 buttonGroup1.add(jRadioButton2);
-                 buttonGroup1.add(jRadioButton3);
-                 buttonGroup1.add(jRadioButton4);
+                 btngAccountType.add(SavingAccount);
+                 btngAccountType.add(FixedDepositAccount);
+                 btngAccountType.add(CurrentAccount);
+                 btngAccountType.add(RecurringDepositAccount);
+                 
+                 
+                                 btnSubmit.addActionListener(this);
+                                 btnCancel.addActionListener(this);
+
+
 
     }
+    public SignUpPage3(){
+        this(null);
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -64,28 +93,27 @@ try {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        btngAccountType = new javax.swing.ButtonGroup();
         lblFormNo = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        lblAccountType = new javax.swing.JLabel();
+        FixedDepositAccount = new javax.swing.JRadioButton();
+        SavingAccount = new javax.swing.JRadioButton();
+        RecurringDepositAccount = new javax.swing.JRadioButton();
+        CurrentAccount = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lblPin = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jLabel8 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblServicesRequired = new javax.swing.JLabel();
+        ATM_Card = new javax.swing.JCheckBox();
+        ChequeBook = new javax.swing.JCheckBox();
+        MobileBanking = new javax.swing.JCheckBox();
+        EmailAlerts = new javax.swing.JCheckBox();
+        E_Statement = new javax.swing.JCheckBox();
+        InternetBanking = new javax.swing.JCheckBox();
+        btnCancel = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
+        lblPage3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
@@ -94,42 +122,46 @@ try {
         lblFormNo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblFormNo.setText("Form No: 6211");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel5.setText("Account Type:");
+        lblAccountType.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        lblAccountType.setText("Account Type:");
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jRadioButton2.setText("Fixed Deposit Account");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        FixedDepositAccount.setBackground(new java.awt.Color(255, 255, 255));
+        btngAccountType.add(FixedDepositAccount);
+        FixedDepositAccount.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        FixedDepositAccount.setText("Fixed Deposit Account");
+        FixedDepositAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                FixedDepositAccountActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jRadioButton1.setText("Saving Account");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        SavingAccount.setBackground(new java.awt.Color(255, 255, 255));
+        btngAccountType.add(SavingAccount);
+        SavingAccount.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        SavingAccount.setText("Saving Account");
+        SavingAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                SavingAccountActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jRadioButton4.setText("Recurring Deposit Account");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        RecurringDepositAccount.setBackground(new java.awt.Color(255, 255, 255));
+        btngAccountType.add(RecurringDepositAccount);
+        RecurringDepositAccount.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        RecurringDepositAccount.setText("Recurring Deposit Account");
+        RecurringDepositAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                RecurringDepositAccountActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jRadioButton3.setText("Current Account");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        CurrentAccount.setBackground(new java.awt.Color(255, 255, 255));
+        btngAccountType.add(CurrentAccount);
+        CurrentAccount.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        CurrentAccount.setText("Current Account");
+        CurrentAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                CurrentAccountActionPerformed(evt);
             }
         });
 
@@ -137,86 +169,83 @@ try {
         jLabel6.setText("Card Number:");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setText("(Your 16-digit Card number)");
+        jLabel2.setText("(The 16-digit Card number)");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel7.setText("PIN:");
+        lblPin.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        lblPin.setText("PIN:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("(4-digit number)");
 
-        jCheckBox7.setFont(new java.awt.Font("Segoe UI Variable", 0, 10)); // NOI18N
-        jCheckBox7.setText("I hereby declare that the above furnished information is true to the best of my knowledge");
-        jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
+        lblServicesRequired.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        lblServicesRequired.setText("Services Required:");
+
+        ATM_Card.setBackground(new java.awt.Color(255, 255, 255));
+        ATM_Card.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ATM_Card.setText("ATM Card");
+
+        ChequeBook.setBackground(new java.awt.Color(255, 255, 255));
+        ChequeBook.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ChequeBook.setText("Cheque Book");
+        ChequeBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox7ActionPerformed(evt);
+                ChequeBookActionPerformed(evt);
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel8.setText("Services Required:");
+        MobileBanking.setBackground(new java.awt.Color(255, 255, 255));
+        MobileBanking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        MobileBanking.setText("Mobile Banking");
 
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jCheckBox1.setText("ATM CARD");
-
-        jCheckBox4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jCheckBox4.setText("Cheque Book");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        EmailAlerts.setBackground(new java.awt.Color(255, 255, 255));
+        EmailAlerts.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        EmailAlerts.setText("Email Alerts");
+        EmailAlerts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                EmailAlertsActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jCheckBox2.setText("Mobile Banking");
-
-        jCheckBox3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jCheckBox3.setText("EMAIL Alerts");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        E_Statement.setBackground(new java.awt.Color(255, 255, 255));
+        E_Statement.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        E_Statement.setText("E-Statement");
+        E_Statement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                E_StatementActionPerformed(evt);
             }
         });
 
-        jCheckBox6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jCheckBox6.setText("E_Statement");
-        jCheckBox6.setActionCommand("E-Statement");
-        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+        InternetBanking.setBackground(new java.awt.Color(255, 255, 255));
+        InternetBanking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        InternetBanking.setText("Internet Banking");
+        InternetBanking.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox6ActionPerformed(evt);
+                InternetBankingActionPerformed(evt);
             }
         });
 
-        jCheckBox5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jCheckBox5.setText("Internet Banking");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+        btnCancel.setBackground(new java.awt.Color(0, 0, 0));
+        btnCancel.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        btnCancel.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
+                btnCancelActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Cancel");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setBackground(new java.awt.Color(0, 0, 0));
+        btnSubmit.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel1.setText("Page 3: Account Detalis");
+        lblPage3.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        lblPage3.setText("Page 3: Account Detalis");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("XXXX");
@@ -235,10 +264,10 @@ try {
                         .addComponent(lblFormNo))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(261, 261, 261)
-                        .addComponent(jLabel1)))
+                        .addComponent(lblPage3)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(92, 92, 92)
+                .addGap(116, 116, 116)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
@@ -249,45 +278,40 @@ try {
                             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
+                            .addComponent(lblAccountType)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(225, 225, 225)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(189, 189, 189)
+                                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(40, 40, 40)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel8)
-                            .addComponent(jCheckBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblServicesRequired)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(SavingAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CurrentAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel6))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(224, 224, 224)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jRadioButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(228, 228, 228)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(224, 224, 224)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(RecurringDepositAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(FixedDepositAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jCheckBox3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                                    .addComponent(jCheckBox4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(ATM_Card, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(EmailAlerts, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                                    .addComponent(ChequeBook, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblPin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(215, 215, 215)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jCheckBox5)
-                                            .addComponent(jCheckBox6)))
+                                            .addComponent(MobileBanking, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(InternetBanking)
+                                            .addComponent(E_Statement)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(218, 218, 218)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(1337, Short.MAX_VALUE))))
+                        .addContainerGap(1318, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,147 +320,181 @@ try {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(142, 142, 142)
-                        .addComponent(jLabel5))
+                        .addComponent(lblAccountType))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblFormNo)
                         .addGap(24, 24, 24)
-                        .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblPage3)))
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
+                    .addComponent(CurrentAccount)
+                    .addComponent(RecurringDepositAccount))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(SavingAccount)
+                    .addComponent(FixedDepositAccount))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel9))
-                .addGap(14, 14, 14)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel2)
-                .addGap(21, 21, 21)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(lblPin)
                     .addComponent(jLabel4))
-                .addGap(14, 14, 14)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel8)
-                .addGap(12, 12, 12)
+                .addGap(40, 40, 40)
+                .addComponent(lblServicesRequired)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox5))
+                    .addComponent(ATM_Card, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InternetBanking))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox2))
+                    .addComponent(ChequeBook)
+                    .addComponent(MobileBanking))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox6)
-                    .addComponent(jCheckBox3))
-                .addGap(37, 37, 37)
-                .addComponent(jCheckBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(E_Statement)
+                    .addComponent(EmailAlerts))
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void SavingAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SavingAccountActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_SavingAccountActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void FixedDepositAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FixedDepositAccountActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_FixedDepositAccountActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void CurrentAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurrentAccountActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_CurrentAccountActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void RecurringDepositAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecurringDepositAccountActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_RecurringDepositAccountActionPerformed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+    private void ChequeBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChequeBookActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    }//GEN-LAST:event_ChequeBookActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void EmailAlertsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailAlertsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_EmailAlertsActionPerformed
 
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+    private void E_StatementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E_StatementActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
+    }//GEN-LAST:event_E_StatementActionPerformed
 
-    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        
+    }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void InternetBankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InternetBankingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox7ActionPerformed
+    }//GEN-LAST:event_InternetBankingActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  @Override
+public void actionPerformed(ActionEvent ae) {
+    try {
+        if (ae.getSource() == btnSubmit) {
 
-       
-    
-    if (buttonGroup1.getSelection() == null) {
-        JOptionPane.showMessageDialog(this, "Please select an Account Type.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
+           
+            String accountType = null;
+            if (SavingAccount.isSelected()) accountType = "Saving Account";
+            else if (CurrentAccount.isSelected()) accountType = "Current Account";
+            else if (FixedDepositAccount.isSelected()) accountType = "Fixed Deposit Account";
+            else if (RecurringDepositAccount.isSelected()) accountType = "Recurring Deposit Account";
+
+            if (accountType == null) {
+                JOptionPane.showMessageDialog(this, "Please select an Account Type.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            
+            Random rand = new Random();
+            String cardNumber = String.format("%04d-%04d-%04d-%04d",
+                    rand.nextInt(10000), rand.nextInt(10000),
+                    rand.nextInt(10000), rand.nextInt(10000));
+
+            
+
+            Conn c = new Conn();
+
+            
+            String updateCustomer = "UPDATE customers SET account_type='"+accountType+"' WHERE form_no='"+formNO+"'";
+            c.s.executeUpdate(updateCustomer);
+
+           
+            boolean atm = ATM_Card.isSelected();
+            boolean cheque = ChequeBook.isSelected();
+            boolean mobile = MobileBanking.isSelected();
+            boolean email = EmailAlerts.isSelected();
+            boolean estatement = E_Statement.isSelected();
+            boolean internet = InternetBanking.isSelected();
+
+            int customerId = 0;
+            var rs = c.s.executeQuery("SELECT id FROM customers WHERE form_no='"+formNO+"'");
+            if (rs.next()) customerId = rs.getInt("id");
+
+            if(atm) c.s.executeUpdate("INSERT INTO requested_services(customer_id, service_name, is_selected) VALUES("+customerId+",'ATM CARD',1)");
+            if(cheque) c.s.executeUpdate("INSERT INTO requested_services(customer_id, service_name, is_selected) VALUES("+customerId+",'Cheque Book',1)");
+            if(mobile) c.s.executeUpdate("INSERT INTO requested_services(customer_id, service_name, is_selected) VALUES("+customerId+",'Mobile Banking',1)");
+            if(email) c.s.executeUpdate("INSERT INTO requested_services(customer_id, service_name, is_selected) VALUES("+customerId+",'EMAIL Alerts',1)");
+            if(estatement) c.s.executeUpdate("INSERT INTO requested_services(customer_id, service_name, is_selected) VALUES("+customerId+",'E_Statement',1)");
+            if(internet) c.s.executeUpdate("INSERT INTO requested_services(customer_id, service_name, is_selected) VALUES("+customerId+",'Internet Banking',1)");
+
+            
+            var rsCheck = c.s.executeQuery("SELECT * FROM users WHERE customer_id="+customerId);
+            if(rsCheck.next()){
+                
+                c.s.executeUpdate("UPDATE users SET card='"+cardNumber+"', pin='"+pin+"' WHERE customer_id="+customerId);
+            } else {
+                
+                c.s.executeUpdate("INSERT INTO users(customer_id, card, pin, balance) VALUES("+customerId+",'"+cardNumber+"','"+pin+"',0)");
+            }
+
+            
+            JOptionPane.showMessageDialog(this, "Account created successfully!\nCard Number: "+cardNumber+"\nPIN: "+pin);
+
+            
+            this.cardNumber = cardNumber;
+            this.dispose();
+            new Deposit(this.cardNumber).setVisible(true);
+
+        } else if (ae.getSource() == btnCancel) {
+            this.dispose();
+            new Login().setVisible(true);
+        }
+
+    } catch(Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
     }
-    
-    
-    if (!jCheckBox7.isSelected()) { 
-        JOptionPane.showMessageDialog(this, "Please accept the declaration to proceed.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-    
-    
-   
-    if (jCheckBox1.isSelected()) {}
-   
-    if (jCheckBox4.isSelected()) {}
-     
-    Random random = new Random();
-    
-    
-    String cardnumber = "504093" + Math.abs(random.nextLong() % 9000000000L + 1000000000L); 
-    
-    
-    String pin = "" + (random.nextInt(9000) + 1000); 
 
-    
-    
-    
-    JOptionPane.showMessageDialog(this, 
-        """
-        Your Card Number is: """ + cardnumber + "\n" + 
-        "Your PIN is: " + pin,
-        "Success", JOptionPane.INFORMATION_MESSAGE);
-    
-    
-    Deposit registrationPage = new Deposit();
-        registrationPage.setVisible(true);
-        this.dispose();
+}
 
-    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose();
-    new Login().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+ 
+
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -459,29 +517,28 @@ try {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JCheckBox ATM_Card;
+    private javax.swing.JCheckBox ChequeBook;
+    private javax.swing.JRadioButton CurrentAccount;
+    private javax.swing.JCheckBox E_Statement;
+    private javax.swing.JCheckBox EmailAlerts;
+    private javax.swing.JRadioButton FixedDepositAccount;
+    private javax.swing.JCheckBox InternetBanking;
+    private javax.swing.JCheckBox MobileBanking;
+    private javax.swing.JRadioButton RecurringDepositAccount;
+    private javax.swing.JRadioButton SavingAccount;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.ButtonGroup btngAccountType;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JLabel lblAccountType;
     private javax.swing.JLabel lblFormNo;
+    private javax.swing.JLabel lblPage3;
+    private javax.swing.JLabel lblPin;
+    private javax.swing.JLabel lblServicesRequired;
     // End of variables declaration//GEN-END:variables
 }

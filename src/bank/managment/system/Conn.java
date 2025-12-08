@@ -6,15 +6,14 @@ public class Conn {
     
     Connection c;
     Statement s;
-    public Conn(){
-        try{
-            c = DriverManager.getConnection("jdbc:mysql///bankmanagmentsystem", "root", "Root");
+    
+    public Conn() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
+            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bankmanagmentsystem", "root", "Root");
             s = c.createStatement();
-                    
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
-    
-    
 }

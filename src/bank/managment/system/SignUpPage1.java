@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.*;
 import javax.swing.JTextField;
 import java.awt.event.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 
@@ -147,11 +149,13 @@ gbtnMaritalStatues.add(ckbOther);
             }
         });
 
+        ckbMale.setBackground(new java.awt.Color(255, 255, 255));
         gbtnGender.add(ckbMale);
         ckbMale.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ckbMale.setForeground(new java.awt.Color(51, 51, 51));
         ckbMale.setText("Male");
 
+        ckbFemale.setBackground(new java.awt.Color(255, 255, 255));
         gbtnGender.add(ckbFemale);
         ckbFemale.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ckbFemale.setForeground(new java.awt.Color(51, 51, 51));
@@ -173,6 +177,7 @@ gbtnMaritalStatues.add(ckbOther);
         lblMaritalStatues.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         lblMaritalStatues.setText("Marital statues:");
 
+        ckbMarried.setBackground(new java.awt.Color(255, 255, 255));
         gbtnMaritalStatues.add(ckbMarried);
         ckbMarried.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ckbMarried.setText("Married");
@@ -182,6 +187,7 @@ gbtnMaritalStatues.add(ckbOther);
             }
         });
 
+        ckbOther.setBackground(new java.awt.Color(255, 255, 255));
         gbtnMaritalStatues.add(ckbOther);
         ckbOther.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ckbOther.setText("Other");
@@ -237,6 +243,7 @@ gbtnMaritalStatues.add(ckbOther);
         lblDateOfBirth.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         lblDateOfBirth.setText("Date of Birth:");
 
+        ckbUnmarried.setBackground(new java.awt.Color(255, 255, 255));
         gbtnMaritalStatues.add(ckbUnmarried);
         ckbUnmarried.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ckbUnmarried.setText("Unmarried");
@@ -344,7 +351,7 @@ gbtnMaritalStatues.add(ckbOther);
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGavernorate)
                     .addComponent(txtGovernorate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
+                .addGap(46, 46, 46)
                 .addComponent(btnNextToPage2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64))
         );
@@ -388,7 +395,7 @@ gbtnMaritalStatues.add(ckbOther);
     String formno = "" + random;
     String name = txtName.getText();
     String fname = txtFatherName.getText();
-    String dob = ((JTextField) jDateChooser1.getDateEditor().getUiComponent()).getText();
+    
     String gender = null;
     if (ckbMale.isSelected()) {
         gender = "Male";
@@ -403,7 +410,7 @@ gbtnMaritalStatues.add(ckbOther);
     if (ckbMarried.isSelected()) {
         marital = "Married";
     } else if (ckbUnmarried.isSelected()) {
-        marital = "Single";
+        marital = "Unmarried";
     } else if (ckbOther.isSelected()) {
         marital = "Other";
     }
@@ -411,11 +418,14 @@ gbtnMaritalStatues.add(ckbOther);
     String pin = txtPin.getText();
 
     try {
-        // التحقق من الحقول المطلوبة
-        if (name.isEmpty() || fname.isEmpty() || email.isEmpty() || pin.isEmpty() ||
-            governorate.isEmpty() || dob.isEmpty()) {
-            throw new Exception("Please fill all required fields.");
-        }
+        if (name.isEmpty() || name.equals("enter name") || 
+    fname.isEmpty() || fname.equals("enter father's name") ||
+    email.isEmpty() || email.equals("enter email") || 
+    pin.isEmpty() || pin.equals("enter code") ||
+    governorate.isEmpty() || governorate.equals("enter state")) {
+    throw new Exception("Please fill all required fields.");
+}
+
 
         if (gender == null) {
             throw new Exception("Please select the Gender.");
@@ -425,22 +435,39 @@ gbtnMaritalStatues.add(ckbOther);
             throw new Exception("Please select the Marital Status.");
         }
 
-        // الاتصال بالداتا بيز
+        
         Conn c = new Conn();
 
         
-        String query = "INSERT INTO customers (form_no, full_name, father_name, date_of_birth, gender, email, " +
-                       "marital_status, governorate, pin_code, account_type) " +
-                       "VALUES ('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+
-                       marital+"','"+governorate+"','"+pin+"','Saving Account')";
+        Date selectedDate = jDateChooser1.getDate(); 
+if (selectedDate == null) {
+    throw new Exception("Please select Date of Birth.");
+}
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    String dob = sdf.format(selectedDate);
 
-        c.s.executeUpdate(query);
+try {
+    Integer.parseInt(pin);
+} catch (NumberFormatException e) {
+    throw new Exception(e);
+}
 
-        JOptionPane.showMessageDialog(this, "Data saved successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+
+
+
+String query = "INSERT INTO customers (form_no, full_name, father_name, date_of_birth, gender, email, " +
+               "marital_status, governorate, pin_code, account_type) " +
+               "VALUES ('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+
+               marital+"','"+governorate+"','"+pin+"','Saving Account')";
+c.s.executeUpdate(query);
+
+        
 
         
         SignUpPage2 nextPage = new SignUpPage2();
-        //nextPage.setFormNo(formno); 
+        nextPage.setFormNo(formno);
+        nextPage.setPIN(pin);
         nextPage.setVisible(true);
         this.dispose();
 

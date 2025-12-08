@@ -17,56 +17,39 @@ import javax.swing.JOptionPane;
  * @author yaraw
  */
 public class PinChange extends javax.swing.JFrame  implements ActionListener{
+private String cardNumber;
 
     /**
      * Creates new form PinChange
      */
-    public PinChange() {
-        initComponents();
-        setLayout(null);
-        this.setSize(900, 900);
-        setLocation(300, 0);
-        setVisible(true);
-        
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));
-        Image i2 =i1.getImage().getScaledInstance(900, 900, Image.SCALE_DEFAULT);
-         ImageIcon i3 = new ImageIcon(i2);
-        JLabel label = new JLabel(i3);
-        label.setBounds(0, 0, 900,900);
-        add(label);
-        btnChg.addActionListener(this);
-        btnBack.addActionListener(this);
-        
-        setTitle("PIN CHANGE");
-        
-    }
+    public PinChange(String cardNumber) {
+    this.cardNumber = cardNumber; // مهم جدا
+
+    initComponents();
+    setLayout(null);
+    this.setSize(900, 900);
+    setLocation(300, 0);
+    setVisible(true);
+
+    
+    ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));
+    Image i2 = i1.getImage().getScaledInstance(900, 900, Image.SCALE_DEFAULT);
+    ImageIcon i3 = new ImageIcon(i2);
+    JLabel label = new JLabel(i3);
+    label.setBounds(0, 0, 900,900);
+    add(label);
+
+    
+    btnChg.addActionListener(this);
+    btnBack.addActionListener(this);
+
+    setTitle("PIN CHANGE");
+}
+
 @Override
 public void actionPerformed(ActionEvent e){
 
-    // زرار Change
-    if(e.getSource() == btnChg){
-
-        String newPin = new String(npin.getPassword());
-        String rePin = new String(jPasswordField1.getPassword());
-
-        if(newPin.equals("") || rePin.equals("")){
-            JOptionPane.showMessageDialog(null, "Please enter PIN!");
-            return;
-        }
-
-        if(!newPin.equals(rePin)){
-            JOptionPane.showMessageDialog(null, "PINs do NOT match!");
-        } else {
-            JOptionPane.showMessageDialog(null, "PIN changed successfully!");
-        }
-    }
-
-    // زرار Back — يفتح MainPage
-    if(e.getSource() == btnBack){
-        MainPage mp = new MainPage(); // افتح الصفحة
-        mp.setVisible(true);
-        this.dispose();               // اقفل دي
-    }
+   
 }
 
     /**
@@ -79,7 +62,7 @@ public void actionPerformed(ActionEvent e){
     private void initComponents() {
 
         npin = new javax.swing.JPasswordField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        npin2 = new javax.swing.JPasswordField();
         btnChg = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         rEntPIN = new javax.swing.JLabel();
@@ -88,16 +71,22 @@ public void actionPerformed(ActionEvent e){
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-        getContentPane().add(npin);
-        npin.setBounds(310, 320, 200, 22);
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        npin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                npinActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(310, 350, 200, 22);
+        getContentPane().add(npin);
+        npin.setBounds(310, 340, 200, 22);
+
+        npin2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                npin2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(npin2);
+        npin2.setBounds(310, 370, 200, 22);
 
         btnChg.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnChg.setText("Change");
@@ -107,10 +96,15 @@ public void actionPerformed(ActionEvent e){
             }
         });
         getContentPane().add(btnChg);
-        btnChg.setBounds(360, 480, 150, 30);
+        btnChg.setBounds(360, 470, 150, 30);
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnBack);
         btnBack.setBounds(360, 510, 150, 30);
 
@@ -118,73 +112,103 @@ public void actionPerformed(ActionEvent e){
         rEntPIN.setForeground(new java.awt.Color(255, 255, 255));
         rEntPIN.setText("Re-Enter New PIN :");
         getContentPane().add(rEntPIN);
-        rEntPIN.setBounds(167, 350, 130, 20);
+        rEntPIN.setBounds(160, 370, 130, 20);
 
         nwPIN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         nwPIN.setForeground(new java.awt.Color(255, 255, 255));
         nwPIN.setText("New PIN :");
         getContentPane().add(nwPIN);
-        nwPIN.setBounds(170, 320, 80, 30);
+        nwPIN.setBounds(160, 330, 80, 30);
 
         chgPIN.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         chgPIN.setForeground(new java.awt.Color(255, 255, 255));
         chgPIN.setText("CHANGE YOUR PIN ");
         getContentPane().add(chgPIN);
-        chgPIN.setBounds(260, 290, 150, 22);
+        chgPIN.setBounds(260, 300, 150, 22);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void npin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_npin2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_npin2ActionPerformed
 
     private void btnChgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChgActionPerformed
-        // TODO add your handling code here:
+         String newPin = new String(npin.getPassword());
+    String rePin = new String(npin2.getPassword());
+
+    if(newPin.equals("") || rePin.equals("")){
+        JOptionPane.showMessageDialog(null, "Please enter PIN!");
+        return;
+    }
+
+    if(!newPin.equals(rePin)){
+        JOptionPane.showMessageDialog(null, "PINs do NOT match!");
+        return;
+    }
+
+    try {
+        Conn c = new Conn();
+
+        String update = "UPDATE users SET pin=? WHERE card=?";
+        java.sql.PreparedStatement pst = c.c.prepareStatement(update);
+
+        pst.setString(1, newPin);
+        pst.setString(2, cardNumber);
+
+        int rows = pst.executeUpdate();
+
+        if(rows > 0){
+            JOptionPane.showMessageDialog(this, "PIN Changed Successfully!");
+            npin.setText("");
+            npin2.setText("");
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Card not found in database!");
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error updating PIN!");
+}
+
+ 
+
     }//GEN-LAST:event_btnChgActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+ 
+                                           
+                                       
+    new MainPage(cardNumber).setVisible(true);
+    this.dispose(); 
+
+
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void npinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_npinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_npinActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PinChange.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PinChange.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PinChange.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PinChange.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    String cardNumber = "12345"; 
+    java.awt.EventQueue.invokeLater(() -> {
+        new PinChange(cardNumber).setVisible(true);
+    });
+}
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PinChange().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChg;
     private javax.swing.JLabel chgPIN;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField npin;
+    private javax.swing.JPasswordField npin2;
     private javax.swing.JLabel nwPIN;
     private javax.swing.JLabel rEntPIN;
     // End of variables declaration//GEN-END:variables
+
 }

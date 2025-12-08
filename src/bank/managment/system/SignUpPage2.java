@@ -6,18 +6,32 @@ package bank.managment.system;
  */
 
 import java.awt.Color;
-/**
- *
- * @author haidy
- */import javax.swing.JOptionPane;
- import javax.swing.ImageIcon;
 import java.awt.Image;
-import java.util.Random;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import java.util.*;
 import javax.swing.JLabel;
-public class SignUpPage2 extends javax.swing.JFrame {
+import javax.swing.*;
+import javax.swing.JTextField;
+import java.awt.event.*;
+
+public class SignUpPage2 extends JFrame implements ActionListener {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SignUpPage2.class.getName());
+    private String formNO;
+    private String pin;
 
+
+    
+    public void setFormNo(String formNO){
+    this.formNO = formNO;
+    lblFormNo.setText("Form No: " + formNO);
+}
+
+    public void setPIN(String Pin){
+        this.pin = Pin;
+    }
+    
     /**
      * Creates new form signUpPage2
      */
@@ -27,9 +41,7 @@ public class SignUpPage2 extends javax.swing.JFrame {
         
         
         
-        //lblFormNo.setText("From No: " + random);
         
-      
         
         
         
@@ -54,45 +66,47 @@ public class SignUpPage2 extends javax.swing.JFrame {
                
          setLocationRelativeTo(null);
          
-               jTextField1.setText("");
+               txtIDno.setText("");
+
                
-               jComboBox1.removeAllItems();
+               cbReligion.removeAllItems();
              
-               jComboBox1.addItem("Select religion");
+               cbReligion.addItem("Select religion");
                
-               jComboBox1.addItem("muslim");
-               jComboBox1.addItem("christian");
-               jComboBox1.addItem("sikh");
-               jComboBox1.addItem("other");
+               cbReligion.addItem("muslim");
+               cbReligion.addItem("christian");
+               cbReligion.addItem("sikh");
+               cbReligion.addItem("others");
                
-                 jComboBox3.removeAllItems();
-                  jComboBox3.addItem("Select income range");
-                 jComboBox3.addItem("Null");
-                 jComboBox3.addItem("<5,000");
-                 jComboBox3.addItem("5,000 - 10,000");
-                 jComboBox3.addItem("10,001 - 20,000");
-                 jComboBox3.addItem("Above 20,000");
+                 cbIncom.removeAllItems();
+                  cbIncom.addItem("Select income range");
+                 cbIncom.addItem("No Income");
+                 cbIncom.addItem("Less than 5,000");
+                 cbIncom.addItem("5,000 - 10,000");
+                 cbIncom.addItem("10,001 - 20,000");
+                 cbIncom.addItem("More than 20,000");
                  
-               jComboBox4.removeAllItems();
-                jComboBox4.addItem("Select education");
-                jComboBox4.addItem("Non-Gratuate");
-                 jComboBox4.addItem("Gratuate");
-                  jComboBox4.addItem("Doctrate");
-                  jComboBox4.addItem("Post-gratuate");
-                    jComboBox4.addItem("Others");
-                    jComboBox5.removeAllItems();
-                     jComboBox5.addItem("Select occupation");
-                          jComboBox5.addItem("Student");
-                     jComboBox5.addItem("Salaried");
-                  jComboBox5.addItem("Self-Employed");
-                  jComboBox5.addItem("Business");
-                  jComboBox5.addItem("Retired");
-                   jComboBox5.addItem("Others");
+               cbEductionalQualification.removeAllItems();
+                cbEductionalQualification.addItem("Select education");
+                cbEductionalQualification.addItem("Non-Graduate");
+                 cbEductionalQualification.addItem("Graduate");
+                  cbEductionalQualification.addItem("Doctorate");
+                  cbEductionalQualification.addItem("Post-Graduate");
+                    cbEductionalQualification.addItem("Others");
+                    cbOccupation.removeAllItems();
+                     cbOccupation.addItem("Select occupation");
+                          cbOccupation.addItem("Student");
+                     cbOccupation.addItem("Salaried");
+                  cbOccupation.addItem("Self-Employed");
+                  cbOccupation.addItem("Business");
+                  cbOccupation.addItem("Retired");
+                   cbOccupation.addItem("Others");
 
                  
                  
                        
-               
+                 btnNextToPage3.addActionListener(this);
+                   
                
     }
 
@@ -107,24 +121,24 @@ public class SignUpPage2 extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
+        lblPage2 = new javax.swing.JLabel();
         lblFormNo = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbReligion = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbIncom = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        cbEductionalQualification = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        cbOccupation = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtIDno = new javax.swing.JTextField();
+        btnNextToPage3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel1.setText("Page 2 : Additional Details");
+        lblPage2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        lblPage2.setText("Page 2 : Additional Details");
 
         lblFormNo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblFormNo.setText("From No: 6211");
@@ -132,55 +146,60 @@ public class SignUpPage2 extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Regligion:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cbReligion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbReligion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cbReligionActionPerformed(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("Income:");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Null", "<5,000", "5,000 - 10,000", "10,001 - 20,000", "Above 10,000" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        cbIncom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Null", "<5,000", "5,000 - 10,000", "10,001 - 20,000", "Above 10,000" }));
+        cbIncom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                cbIncomActionPerformed(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("Eductional Qualification:");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        cbEductionalQualification.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbEductionalQualification.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                cbEductionalQualificationActionPerformed(evt);
             }
         });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("Occupation:");
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbOccupation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbOccupation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbOccupationActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setText("ID Number:");
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtIDno.setText("jTextField1");
+        txtIDno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtIDnoActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Next");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnNextToPage3.setBackground(new java.awt.Color(0, 0, 0));
+        btnNextToPage3.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        btnNextToPage3.setForeground(new java.awt.Color(255, 255, 255));
+        btnNextToPage3.setText("Next");
+        btnNextToPage3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnNextToPage3ActionPerformed(evt);
             }
         });
 
@@ -190,7 +209,7 @@ public class SignUpPage2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(261, 261, 261)
-                .addComponent(jLabel1)
+                .addComponent(lblPage2)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 682, Short.MAX_VALUE)
@@ -200,7 +219,7 @@ public class SignUpPage2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnNextToPage3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -212,14 +231,14 @@ public class SignUpPage2 extends javax.swing.JFrame {
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(45, 45, 45)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField1)
-                                    .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(cbOccupation, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtIDno)
+                                    .addComponent(cbEductionalQualification, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbIncom, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(170, 170, 170)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(cbReligion, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(185, 185, 185))
         );
         layout.setVerticalGroup(
@@ -228,101 +247,109 @@ public class SignUpPage2 extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(lblFormNo)
                 .addGap(21, 21, 21)
-                .addComponent(jLabel1)
+                .addComponent(lblPage2)
                 .addGap(118, 118, 118)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbReligion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbIncom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbEductionalQualification, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbOccupation, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)))
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIDno, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(109, 109, 109)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addGap(88, 88, 88)
+                .addComponent(btnNextToPage3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(237, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbReligionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbReligionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbReligionActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here
-        if (jTextField1.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please fill ID Number.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+    private void btnNextToPage3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextToPage3ActionPerformed
 
-        
-        if ( jComboBox3.getSelectedIndex() == 0 || 
-            jComboBox4.getSelectedIndex() == 0 || jComboBox5.getSelectedIndex() == 0) {
-            
-            JOptionPane.showMessageDialog(this, "Please select an option for all dropdown fields.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+    }//GEN-LAST:event_btnNextToPage3ActionPerformed
 
+    private void txtIDnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDnoActionPerformed
+
+    private void cbIncomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbIncomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbIncomActionPerformed
+
+    private void cbEductionalQualificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEductionalQualificationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbEductionalQualificationActionPerformed
+
+    private void cbOccupationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOccupationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbOccupationActionPerformed
       
+    
+     
+    public void actionPerformed(ActionEvent ae) {
+        
+        
+        
+    
+    String religion = (String) cbReligion.getSelectedItem();
+    String income = (String) cbIncom.getSelectedItem();
+    String education = (String) cbEductionalQualification.getSelectedItem();
+    String occupation = (String) cbOccupation.getSelectedItem();
+    String nationalId = txtIDno.getText(); 
+    
+
+    try {
+        
         
 
-       
+if (religion.equals("Select religion") || income.equals("Select income range") || 
+    education.equals("Select education") || occupation.equals("Select occupation") || nationalId.isEmpty()) {
+    JOptionPane.showMessageDialog(this, "Please fill all required fields!", "Error", JOptionPane.ERROR_MESSAGE);
+    return;
+}
+
+
+        Conn c = new Conn();
         
-        
-        
+        String query = "UPDATE customers SET religion='" + religion + 
+               "', income='" + income + 
+               "', education='" + education + 
+               "', occupation='" + occupation + 
+               "', national_id='" + nationalId + 
+               "' WHERE form_no='" + formNO + "'";
+
+        c.s.executeUpdate(query);
 
         
-        try {
-            Class<?> cls = Class.forName("SignUpPage3");
-            javax.swing.JFrame nextPage = (javax.swing.JFrame) cls.getDeclaredConstructor().newInstance();
-            nextPage.setVisible(true);
-            this.dispose(); 
-        } catch (ClassNotFoundException e) {
-            
-            JOptionPane.showMessageDialog(this, "Error: SignUpPage3 class not found. Please create Page 3.", "Critical Error", JOptionPane.ERROR_MESSAGE);
-           
-        } catch (Exception e) {
-            
-        }
-        
-       
-    
-    
-    
-    
-   
-    
-    
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        SignUpPage3 nextPage = new SignUpPage3();
+        nextPage.setFormNo(formNO);
+        nextPage.setPIN(pin);
+        nextPage.setVisible(true);
+        this.dispose();
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
-
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
-      
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
     
     
     public static void main(String args[]) {
@@ -348,20 +375,23 @@ public class SignUpPage2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnNextToPage3;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> cbEductionalQualification;
+    private javax.swing.JComboBox<String> cbIncom;
+    private javax.swing.JComboBox<String> cbOccupation;
+    private javax.swing.JComboBox<String> cbReligion;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblFormNo;
+    private javax.swing.JLabel lblPage2;
+    private javax.swing.JTextField txtIDno;
     // End of variables declaration//GEN-END:variables
 }
+
+
+
