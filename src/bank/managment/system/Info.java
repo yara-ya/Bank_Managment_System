@@ -6,15 +6,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author yaraw
- */
 public class Info extends javax.swing.JFrame {
     private String cardNumber;
 
@@ -284,7 +276,7 @@ private void loadClientInfo(String cardNumber){
         java.sql.ResultSet rs = pst.executeQuery();
 
         if(rs.next()){
-            // بيانات العميل من جدول customers
+            
             lbl_FullName.setText(rs.getString("full_name"));
             lbl_DateOfBirth.setText(rs.getString("date_of_birth"));
             lbl_Gender.setText(rs.getString("gender"));
