@@ -1,4 +1,4 @@
-/*
+
 package bank.managment.system;
 
 import java.sql.SQLException;
@@ -209,4 +209,3 @@ public class MiniStatement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     // End of variables declaration                   
 }
-*/

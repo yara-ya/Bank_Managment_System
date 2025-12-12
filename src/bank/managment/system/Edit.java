@@ -80,6 +80,7 @@ public class Edit extends javax.swing.JFrame {
         txt_Gender = new javax.swing.JTextField();
         txt_DateOfBirth = new javax.swing.JTextField();
         txt_FullName = new javax.swing.JTextField();
+        txt_FatherName = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -223,10 +224,19 @@ public class Edit extends javax.swing.JFrame {
 
         txt_FullName.setBackground(new java.awt.Color(204, 204, 204));
         txt_FullName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        txt_FullName.setText("Yara AbdelFattah mohammed");
+        txt_FullName.setText("Yara");
         txt_FullName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_FullNameActionPerformed(evt);
+            }
+        });
+
+        txt_FatherName.setBackground(new java.awt.Color(204, 204, 204));
+        txt_FatherName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txt_FatherName.setText("Mohammed");
+        txt_FatherName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_FatherNameActionPerformed(evt);
             }
         });
 
@@ -244,7 +254,10 @@ public class Edit extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_FullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txt_FullName, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_FatherName, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txt_DateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
@@ -296,7 +309,9 @@ public class Edit extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(txt_FullName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txt_FatherName, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(txt_FullName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_Governorate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -339,7 +354,7 @@ public class Edit extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_Done, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         pack();
@@ -368,11 +383,12 @@ public class Edit extends javax.swing.JFrame {
         String email = txt_Email.getText();
         String card = txt_CardNumber.getText();
         String pin = txt_Pin.getText();
+        String fatherName = txt_FatherName.getText();
 
         
         if (fullName.isEmpty() || dob.isEmpty() || gender.isEmpty() || governorate.isEmpty() ||
             marital.isEmpty() || education.isEmpty() || nationalID.isEmpty() || income.isEmpty() ||
-            religion.isEmpty() || occupation.isEmpty() || email.isEmpty() || card.isEmpty() || pin.isEmpty()) {
+            religion.isEmpty() || occupation.isEmpty() || email.isEmpty() || card.isEmpty() || pin.isEmpty() || fatherName.isEmpty()) {
 
             JOptionPane.showMessageDialog(this, "Please fill all fields!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
@@ -395,21 +411,22 @@ public class Edit extends javax.swing.JFrame {
         int customerID = rs.getInt("customer_id");
 
         // 4) UPDATE customers
-        String updateCustomer = "UPDATE customers SET full_name=?, date_of_birth=?, gender=?, governorate=?, marital_status=?, education=?, national_id=?, income=?, religion=?, occupation=?, email=? WHERE id=?";
+        String updateCustomer = "UPDATE customers SET full_name=?, father_name=?, date_of_birth=?, gender=?, governorate=?, marital_status=?, education=?, national_id=?, income=?, religion=?, occupation=?, email=? WHERE id=?";
         java.sql.PreparedStatement pst2 = c.c.prepareStatement(updateCustomer);
 
         pst2.setString(1, fullName);
-        pst2.setString(2, dob);
-        pst2.setString(3, gender);
-        pst2.setString(4, governorate);
-        pst2.setString(5, marital);
-        pst2.setString(6, education);
-        pst2.setString(7, nationalID);
-        pst2.setString(8, income);
-        pst2.setString(9, religion);
-        pst2.setString(10, occupation);
-        pst2.setString(11, email);
-        pst2.setInt(12, customerID);
+        pst2.setString(2, fatherName);
+        pst2.setString(3, dob);
+        pst2.setString(4, gender);
+        pst2.setString(5, governorate);
+        pst2.setString(6, marital);
+        pst2.setString(7, education);
+        pst2.setString(8, nationalID);
+        pst2.setString(9, income);
+        pst2.setString(10, religion);
+        pst2.setString(11, occupation);
+        pst2.setString(12, email);
+        pst2.setInt(13, customerID);
 
         pst2.executeUpdate();
 
@@ -475,6 +492,10 @@ public class Edit extends javax.swing.JFrame {
     private void txt_FullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_FullNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_FullNameActionPerformed
+
+    private void txt_FatherNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_FatherNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_FatherNameActionPerformed
 private void loadClientInfo(String cardNumber){
     try {
         Conn c = new Conn();
@@ -491,6 +512,7 @@ private void loadClientInfo(String cardNumber){
         if(rs.next()){
             
             txt_FullName.setText(rs.getString("full_name"));
+            txt_FatherName.setText(rs.getString("father_name"));
             txt_DateOfBirth.setText(rs.getString("date_of_birth"));
             txt_Gender.setText(rs.getString("gender"));
             txt_Maritalstatues.setText(rs.getString("marital_status"));
@@ -566,6 +588,7 @@ private void loadClientInfo(String cardNumber){
     private javax.swing.JTextField txt_DateOfBirth;
     private javax.swing.JTextField txt_Education;
     private javax.swing.JTextField txt_Email;
+    private javax.swing.JTextField txt_FatherName;
     private javax.swing.JTextField txt_FullName;
     private javax.swing.JTextField txt_Gender;
     private javax.swing.JTextField txt_Governorate;

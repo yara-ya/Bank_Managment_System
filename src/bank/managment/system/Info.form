@@ -28,58 +28,70 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lbl_Regligion" min="-2" pref="120" max="-2" attributes="0"/>
-                                  <Component id="lbl_ID" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lbl_RegligionField" min="-2" pref="140" max="-2" attributes="0"/>
-                                  <Component id="lbl_IDfield" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lbl_Income" max="32767" attributes="0"/>
-                                  <Component id="lbl_Pin" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lbl_Occupation" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lbl_Eduction" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="Separator" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="lbl_DateOfBirth" max="32767" attributes="0"/>
-                                              <Component id="lbl_Gender" max="32767" attributes="0"/>
-                                              <Component id="lbl_FullName" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="lbl_AccountType" min="-2" pref="120" max="-2" attributes="0"/>
-                                              <Component id="lbl_CardNumber" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="lbl_DateOfBirth" max="32767" attributes="0"/>
+                                                      <Component id="lbl_Gender" max="32767" attributes="0"/>
+                                                      <Component id="lbl_FullName" alignment="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Component id="lbl_AccountType" min="-2" pref="120" max="-2" attributes="0"/>
+                                                      <Component id="lbl_CardNumber" min="-2" pref="120" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="lbl_CardNumField" max="32767" attributes="0"/>
+                                                      <Component id="lbl_AccountTypeField" max="32767" attributes="0"/>
+                                                      <Component id="lbl_EmailField" alignment="0" pref="140" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lbl_Regligion" min="-2" pref="120" max="-2" attributes="0"/>
+                                              <Component id="lbl_ID" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="lbl_CardNumField" max="32767" attributes="0"/>
-                                              <Component id="lbl_AccountTypeField" max="32767" attributes="0"/>
-                                              <Component id="lbl_EmailField" alignment="0" pref="140" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lbl_RegligionField" min="-2" pref="140" max="-2" attributes="0"/>
+                                              <Component id="lbl_IDfield" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
                                           </Group>
+                                          <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="lbl_Income" max="32767" attributes="0"/>
+                                              <Component id="lbl_Pin" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="lbl_Occupation" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="lbl_Eduction" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lbl_Governorate" min="-2" pref="101" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                          <Component id="lbl_Maritalstatues" min="-2" pref="85" max="-2" attributes="0"/>
-                                          <Component id="lbl_PinField" alignment="1" min="-2" pref="83" max="-2" attributes="0"/>
-                                          <Component id="lbl_IncomField" alignment="1" min="-2" pref="83" max="-2" attributes="0"/>
-                                          <Component id="lbl_EductionField" alignment="1" min="-2" pref="83" max="-2" attributes="0"/>
-                                          <Component id="lbl_OccupationField" alignment="1" min="-2" pref="83" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                              <Component id="lbl_Governorate" min="-2" pref="101" max="-2" attributes="0"/>
+                                              <Component id="lbl_Maritalstatues" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="lbl_IncomField" min="-2" pref="99" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="lbl_EductionField" alignment="0" pref="99" max="32767" attributes="0"/>
+                                          <Component id="lbl_OccupationField" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="lbl_PinField" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
