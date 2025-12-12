@@ -178,7 +178,7 @@ private void withdraw(int amount) {
         pst3.setString(2, cardNumber);
         pst3.executeUpdate();
 
-        JOptionPane.showMessageDialog(null, "You have withdrawn " + amount + " LE.\nCurrent balance: " + newBalance);
+        JOptionPane.showMessageDialog(null, "You have withdrawn " + amount);
 
     } catch(Exception ex){
         ex.printStackTrace();
