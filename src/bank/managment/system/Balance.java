@@ -12,6 +12,7 @@ private String cardNumber;
     public Balance(String cardNumber) {
     this.cardNumber = cardNumber; 
     initComponents();
+    setResizable(false);
     
     setLayout(null);
     this.setSize(900, 900);
@@ -82,7 +83,7 @@ private void loadBalance() {
 
         if(rs.next()) {
             int balance = rs.getInt("balance"); 
-            yrCurr.setText("Your Current Account Balance Is LE " + balance);
+            yrCurr.setText("Your Current Account Balance Is " + balance+" EP");
         } else {
             yrCurr.setText("Card not found!");
         }

@@ -3,12 +3,8 @@ package bank.managment.system;
 
 import java.awt.Color;
 import java.awt.Image;
-import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
-
-import javax.swing.JButton;
 
 
 public class Login extends javax.swing.JFrame {
@@ -20,6 +16,7 @@ public class Login extends javax.swing.JFrame {
     public Login(String cardNumber) {
     this.cardNumber = cardNumber;
     initComponents();
+    setResizable(false);
    
 
 
@@ -214,7 +211,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnCreateNewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNewAccountActionPerformed
-        // TODO add your handling code here:
+       
       
         SignUpPage1 registrationPage = new SignUpPage1();
         registrationPage.setVisible(true);
@@ -223,16 +220,14 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCreateNewAccountActionPerformed
 
     private void cardTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardTextFieldActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_cardTextFieldActionPerformed
 
     private void pinPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinPasswordFieldActionPerformed
         
     }//GEN-LAST:event_pinPasswordFieldActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {

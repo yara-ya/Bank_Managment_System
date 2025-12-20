@@ -1,11 +1,5 @@
 package bank.managment.system;
 
-
-import bank.managment.system.Info;
-import bank.managment.system.FastCash;
-import bank.managment.system.Deposit;
-import bank.managment.system.CashWithdrawl;
-import bank.managment.system.Balance;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -19,6 +13,7 @@ public class MainPage extends javax.swing.JFrame {
 public MainPage(String cardNumber) {
     this.cardNumber = cardNumber;
     initComponents();
+    setResizable(false);
     
     setLayout(null);
     this.setSize(900, 900);

@@ -2,28 +2,21 @@ package bank.managment.system;
 
 
 import java.awt.Image;
-
-import javax.swing.JLabel;
-import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import java.util.*;
 import javax.swing.JLabel;
-import javax.swing.*;
-import javax.swing.JTextField;
-import java.awt.event.*;
+
 
 
 
 public class Deposit extends javax.swing.JFrame {
 private String cardNumber;
 
-    /**
-     * Creates new form Deposit
-     */
+    
     public Deposit(String cardNumber) {
     this.cardNumber = cardNumber;
     initComponents();
+    setResizable(false);
     setLayout(null);
     this.setSize(900, 900);
     setLocation(300, 0);
@@ -134,8 +127,8 @@ private String cardNumber;
         
         String update = "UPDATE users SET balance = balance + ? WHERE card = ?";
         java.sql.PreparedStatement pst = c.c.prepareStatement(update);
-        pst.setDouble(1, amount);
-        pst.setString(2, cardNumber);
+        pst.setDouble(1, amount); 
+        pst.setString(2, cardNumber); 
         int rowsUpdated = pst.executeUpdate();
 
         if (rowsUpdated == 0) {
@@ -148,7 +141,7 @@ private String cardNumber;
         java.sql.PreparedStatement pst2 = c.c.prepareStatement(insert);
         pst2.setString(1, cardNumber);
         pst2.setDouble(2, amount);
-        pst2.executeUpdate();
+        pst2.executeUpdate(); 
 
         JOptionPane.showMessageDialog(this, "Deposit Successful!");
 
@@ -170,7 +163,7 @@ private String cardNumber;
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtEnterYourDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnterYourDepositActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_txtEnterYourDepositActionPerformed
 
     

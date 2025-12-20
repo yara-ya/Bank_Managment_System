@@ -5,8 +5,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.JButton;
+
 
 public class CashWithdrawl extends javax.swing.JFrame {
 private String cardNumber;
@@ -15,6 +14,7 @@ private String cardNumber;
     public CashWithdrawl(String cardNumber) {
     this.cardNumber = cardNumber; 
     initComponents();
+    setResizable(false);
     
     setLayout(null);
     this.setSize(900, 900);
@@ -113,11 +113,11 @@ private String cardNumber;
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCashActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtCashActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void WITHDRAWLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WITHDRAWLActionPerformed

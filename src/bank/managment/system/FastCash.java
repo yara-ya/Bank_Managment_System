@@ -8,15 +8,7 @@ import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author yaraw
- */
 public class FastCash extends javax.swing.JFrame {
     int balance=6555;
     private String cardNumber;
@@ -27,6 +19,7 @@ public class FastCash extends javax.swing.JFrame {
     public FastCash(String cardNumber) {
     this.cardNumber = cardNumber; 
     initComponents();
+    setResizable(false);
     setLayout(null);
     this.setSize(900, 900);
     setLocation(300, 0);
@@ -149,17 +142,17 @@ private void withdraw(int amount) {
     try {
         Conn c = new Conn();
 
-        int currentBalance = 0;
+        int currentBalance = 0; 
         String q = "SELECT balance FROM users WHERE card=?";
         PreparedStatement pst = c.c.prepareStatement(q);
         pst.setString(1, cardNumber);
         ResultSet rs = pst.executeQuery();
-
+ 
         if(rs.next()){
             currentBalance = rs.getInt("balance");
         }
 
-        if(amount > currentBalance){
+        if(amount > currentBalance){ 
             JOptionPane.showMessageDialog(null, "Insufficient balance!");
             return;
         }

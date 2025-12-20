@@ -1,6 +1,5 @@
 package bank.managment.system;
 
-import bank.managment.system.MainPage;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -24,6 +23,7 @@ private String cardNumber;
     this.cardNumber = cardNumber; 
 
     initComponents();
+    setResizable(false);
     setLayout(null);
     this.setSize(900, 900);
     setLocation(300, 0);
@@ -124,7 +124,7 @@ public void actionPerformed(ActionEvent e){
     }// </editor-fold>//GEN-END:initComponents
 
     private void npin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_npin2ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_npin2ActionPerformed
 
     private void btnChgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChgActionPerformed
@@ -181,12 +181,10 @@ public void actionPerformed(ActionEvent e){
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void npinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_npinActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_npinActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String args[]) {
     String cardNumber = "12345"; 
     java.awt.EventQueue.invokeLater(() -> {

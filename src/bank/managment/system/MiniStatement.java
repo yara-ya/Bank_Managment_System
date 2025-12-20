@@ -27,6 +27,7 @@ public class MiniStatement extends javax.swing.JFrame {
     public MiniStatement(String cardNumber) {
         this.cardNumber = cardNumber;
         initComponents();
+        setResizable(false);
         
         this.setTitle("MiniStatement");
         this.setLocationRelativeTo(null);
@@ -189,10 +190,7 @@ public class MiniStatement extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MiniStatement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         
-        //</editor-fold>
 
         
       String cardNumber = "4587XXXXXXXX7896"; 
