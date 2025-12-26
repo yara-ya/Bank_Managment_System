@@ -1,7 +1,9 @@
 ````markdown
 # ATM Banking System (Java)
 
-A professional **ATM Banking System** developed in Java as part of an Information Systems course. This system simulates real ATM operations in a structured, secure, and user-friendly manner, demonstrating essential banking functionalities while applying core information systems concepts.
+A professional **ATM Banking System** developed in Java as part of an Information Systems course.
+This system simulates real ATM operations in a structured, secure, and user-friendly manner,
+demonstrating essential banking functionalities while applying core information systems concepts.
 
 ---
 
