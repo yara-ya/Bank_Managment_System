@@ -1,3 +1,6 @@
-/build/
-/dist/
-/nbproject/private/
+/bin/
+*.class
+*.log
+*.tmp
+.idea/
+.vscode/
