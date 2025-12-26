@@ -10,7 +10,6 @@ import java.sql.PreparedStatement;
 
 
 public class FastCash extends javax.swing.JFrame {
-    int balance=6555;
     private String cardNumber;
 
     /**

@@ -6,15 +6,7 @@ import javax.swing.JLabel;
 import java.awt.event.*;
 import javax.swing.JOptionPane;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author yaraw
- */
 public class PinChange extends javax.swing.JFrame  implements ActionListener{
 private String cardNumber;
 

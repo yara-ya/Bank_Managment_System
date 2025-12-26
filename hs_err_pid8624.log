@@ -1,0 +1,431 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 843664 bytes. Error detail: Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (arena.cpp:162), pid=8624, tid=18132
+#
+# JRE version: OpenJDK Runtime Environment Zulu24.32+13-CA (24.0.2+12) (build 24.0.2+12)
+# Java VM: OpenJDK 64-Bit Server VM Zulu24.32+13-CA (24.0.2+12, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dapplication.home=E:\Apache NetBeans\jdk --add-modules=ALL-DEFAULT -Xms8m -Djdk.module.main=jdk.compiler jdk.compiler/com.sun.tools.javac.Main -d C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\build\classes -classpath C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\build\classes;C:\Users\haidy\Downloads\jcalendar-0.8.1.zip;C:\Users\haidy\Downloads\jcalendar-0.8.1\jcalendar-0.8.1.jar -sourcepath C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\src -target 21 -encoding UTF-8 -g -processorpath C:\Users\haidy\Downloads\jcalendar-0.8.1.zip;C:\Users\haidy\Downloads\jcalendar-0.8.1\jcalendar-0.8.1.jar;C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\build\empty -s C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\build\generated-sources\ap-source-output -source 21 C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\src\signinpage3.java
+
+Host: 13th Gen Intel(R) Core(TM) i7-1355U, 12 cores, 15G,  Windows 11 , 64 bit Build 22621 (10.0.22621.3958)
+Time: Thu Nov 27 16:21:25 2025 Egypt Standard Time elapsed time: 0.046607 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000018c7c032d90):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=18132, stack(0x000000844f800000,0x000000844f900000) (1024K)]
+
+
+Current CompileTask:
+C2:46  137       4       java.util.HashMap::putVal (300 bytes)
+
+Stack: [0x000000844f800000,0x000000844f900000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x741329]  (no source info available)
+V  [jvm.dll+0x97e243]  (no source info available)
+V  [jvm.dll+0x98056d]  (no source info available)
+V  [jvm.dll+0x980be3]  (no source info available)
+V  [jvm.dll+0x2b5a76]  (no source info available)
+V  [jvm.dll+0xd00af]  (no source info available)
+V  [jvm.dll+0xd030f]  (no source info available)
+V  [jvm.dll+0x15b85f]  (no source info available)
+V  [jvm.dll+0x746bef]  (no source info available)
+V  [jvm.dll+0x27a478]  (no source info available)
+V  [jvm.dll+0x279591]  (no source info available)
+V  [jvm.dll+0x1f30fa]  (no source info available)
+V  [jvm.dll+0x288d95]  (no source info available)
+V  [jvm.dll+0x28702a]  (no source info available)
+V  [jvm.dll+0x43e016]  (no source info available)
+V  [jvm.dll+0x920c78]  (no source info available)
+V  [jvm.dll+0x73fab5]  (no source info available)
+C  [ucrtbase.dll+0x29333]  (no source info available)
+C  [KERNEL32.DLL+0x1257d]  (no source info available)
+C  [ntdll.dll+0x5af08]  (no source info available)
+
+Lock stack of current Java thread (top to bottom):
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x0000018c451d1a30, length=11, elements={
+0x0000018c5c77ade0, 0x0000018c7c024b70, 0x0000018c7c0254b0, 0x0000018c7c02a380,
+0x0000018c7c02daf0, 0x0000018c7c02e9d0, 0x0000018c7c031510, 0x0000018c7c032d90,
+0x0000018c7c03dc20, 0x0000018c4518a6e0, 0x0000018c451e2a70
+}
+
+Java Threads: ( => current thread )
+  0x0000018c5c77ade0 JavaThread "main"                              [_thread_in_vm, id=10900, stack(0x000000844ea00000,0x000000844eb00000) (1024K)]
+  0x0000018c7c024b70 JavaThread "Reference Handler"          daemon [_thread_blocked, id=21820, stack(0x000000844f200000,0x000000844f300000) (1024K)]
+  0x0000018c7c0254b0 JavaThread "Finalizer"                  daemon [_thread_blocked, id=7216, stack(0x000000844f300000,0x000000844f400000) (1024K)]
+  0x0000018c7c02a380 JavaThread "Signal Dispatcher"          daemon [_thread_blocked, id=1276, stack(0x000000844f400000,0x000000844f500000) (1024K)]
+  0x0000018c7c02daf0 JavaThread "Attach Listener"            daemon [_thread_blocked, id=3408, stack(0x000000844f500000,0x000000844f600000) (1024K)]
+  0x0000018c7c02e9d0 JavaThread "Service Thread"             daemon [_thread_blocked, id=8276, stack(0x000000844f600000,0x000000844f700000) (1024K)]
+  0x0000018c7c031510 JavaThread "Monitor Deflation Thread"   daemon [_thread_blocked, id=10176, stack(0x000000844f700000,0x000000844f800000) (1024K)]
+=>0x0000018c7c032d90 JavaThread "C2 CompilerThread0"         daemon [_thread_in_native, id=18132, stack(0x000000844f800000,0x000000844f900000) (1024K)]
+  0x0000018c7c03dc20 JavaThread "C1 CompilerThread0"         daemon [_thread_blocked, id=1948, stack(0x000000844f900000,0x000000844fa00000) (1024K)]
+  0x0000018c4518a6e0 JavaThread "Notification Thread"        daemon [_thread_blocked, id=22520, stack(0x000000844fa00000,0x000000844fb00000) (1024K)]
+  0x0000018c451e2a70 JavaThread "C2 CompilerThread1"         daemon [_thread_in_native, id=14956, stack(0x000000844fb00000,0x000000844fc00000) (1024K)]
+Total: 11
+
+Other Threads:
+  0x0000018c5c83e5d0 VMThread "VM Thread"                           [id=20728, stack(0x000000844f100000,0x000000844f200000) (1024K)]
+  0x0000018c7c0108f0 WatcherThread "VM Periodic Task Thread"        [id=12224, stack(0x000000844f000000,0x000000844f100000) (1024K)]
+  0x0000018c5c7e4ec0 WorkerThread "GC Thread#0"                     [id=24528, stack(0x000000844eb00000,0x000000844ec00000) (1024K)]
+  0x0000018c5c7f98b0 ConcurrentGCThread "G1 Main Marker"            [id=12516, stack(0x000000844ec00000,0x000000844ed00000) (1024K)]
+  0x0000018c5c7fa3c0 WorkerThread "G1 Conc#0"                       [id=23348, stack(0x000000844ed00000,0x000000844ee00000) (1024K)]
+  0x0000018c5c81b9e0 ConcurrentGCThread "G1 Refine#0"               [id=23684, stack(0x000000844ee00000,0x000000844ef00000) (1024K)]
+  0x0000018c5c81c470 ConcurrentGCThread "G1 Service"                [id=16228, stack(0x000000844ef00000,0x000000844f000000) (1024K)]
+Total: 7
+
+Threads with active compile tasks:
+C2 CompilerThread0  67  137       4       java.util.HashMap::putVal (300 bytes)
+C2 CompilerThread1  67  244       4       jdk.internal.util.ArraysSupport::unsignedHashCode (36 bytes)
+Total: 2
+
+VM state: not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffa58793bc8] MethodCompileQueue_lock - owner thread: 0x0000018c5c77ade0
+
+Heap address: 0x0000000705800000, size: 4008 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000018c00000000-0x0000018c00d40000-0x0000018c00d40000), size 13893632, SharedBaseAddress: 0x0000018c00000000, ArchiveRelocationMode: 1.
+Compressed class space mapped at: 0x0000018c01000000-0x0000018c41000000, reserved size: 1073741824
+UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+Narrow klass pointer bits 32, Max shift 3
+Narrow klass base: 0x0000018c00000000, Narrow klass shift: 0
+Encoding Range: [0x0000018c00000000 - 0x0000018d00000000), (4294967296 bytes)
+Klass Range:    [0x0000018c00000000 - 0x0000018c41000000), (1090519040 bytes)
+Klass ID Range:  [8 - 1090519033) (1090519025)
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+ CPUs: 12 total, 12 available
+ Memory: 16027M
+ Large Page Support: Disabled
+ NUMA Support: Disabled
+ Compressed Oops: Enabled (Zero based)
+ Heap Region Size: 2M
+ Heap Min Capacity: 8M
+ Heap Initial Capacity: 8M
+ Heap Max Capacity: 4008M
+ Pre-touch: Disabled
+ Parallel Workers: 10
+ Concurrent Workers: 3
+ Concurrent Refinement Workers: 10
+ Periodic GC: Disabled
+
+Heap:
+ garbage-first heap   total reserved 4104192K, committed 10240K, used 1136K [0x0000000705800000, 0x0000000800000000)
+  region size 2048K, 1 young (2048K), 0 survivors (0K)
+ Metaspace       used 680K, committed 832K, reserved 1114112K
+  class space    used 72K, committed 192K, reserved 1048576K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TAMS=top-at-mark-start, PB=parsable bottom
+|   0|0x0000000705800000, 0x0000000705800000, 0x0000000705a00000|  0%| F|  |TAMS 0x0000000705800000| PB 0x0000000705800000| Untracked |  0
+|   1|0x0000000705a00000, 0x0000000705a00000, 0x0000000705c00000|  0%| F|  |TAMS 0x0000000705a00000| PB 0x0000000705a00000| Untracked |  0
+|   2|0x0000000705c00000, 0x0000000705c00000, 0x0000000705e00000|  0%| F|  |TAMS 0x0000000705c00000| PB 0x0000000705c00000| Untracked |  0
+|   3|0x0000000705e00000, 0x0000000705fdfd58, 0x0000000706000000| 93%| E|  |TAMS 0x0000000705e00000| PB 0x0000000705e00000| Complete |  0
+|2003|0x00000007ffe00000, 0x00000007fff1c318, 0x0000000800000000| 55%| O|  |TAMS 0x00000007ffe00000| PB 0x00000007ffe00000| Untracked |  0
+
+Card table byte_map: [0x0000018c74fb0000,0x0000018c75790000] _byte_map_base: 0x0000018c71784000
+
+Marking Bits: (CMBitMap*) 0x0000018c5c7e55d0
+ Bits: [0x0000018c75790000, 0x0000018c79630000)
+
+Polling page: 0x0000018c5a660000
+
+Metaspace:
+
+Usage:
+  Non-class:    607.19 KB used.
+      Class:     72.98 KB used.
+       Both:    680.16 KB used.
+
+Virtual space:
+  Non-class space:       64.00 MB reserved,     640.00 KB ( <1%) committed,  1 nodes.
+      Class space:        1.00 GB reserved,     192.00 KB ( <1%) committed,  1 nodes.
+             Both:        1.06 GB reserved,     832.00 KB ( <1%) committed. 
+
+Chunk freelists:
+   Non-Class:  11.69 MB
+       Class:  15.69 MB
+        Both:  27.37 MB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 21.00 MB
+CDS: on
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 8388608.
+ - enlarge_chunks_in_place: 1.
+UseCompressedClassPointers 1, UseCompactObjectHeaders 0
+Narrow klass pointer bits 32, Max shift 3
+Narrow klass base: 0x0000018c00000000, Narrow klass shift: 0
+Encoding Range: [0x0000018c00000000 - 0x0000018d00000000), (4294967296 bytes)
+Klass Range:    [0x0000018c00000000 - 0x0000018c41000000), (1090519040 bytes)
+Klass ID Range:  [8 - 1090519033) (1090519025)
+
+
+Internal statistics:
+
+num_allocs_failed_limit: 0.
+num_arena_births: 10.
+num_arena_deaths: 0.
+num_vsnodes_births: 2.
+num_vsnodes_deaths: 0.
+num_space_committed: 13.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 0.
+num_chunks_taken_from_freelist: 31.
+num_chunk_merges: 0.
+num_chunk_splits: 23.
+num_chunks_enlarged: 18.
+num_inconsistent_stats: 0.
+
+CodeHeap 'non-profiled nmethods': size=120064Kb used=79Kb max_used=79Kb free=119985Kb
+ bounds [0x0000018c6cd40000, 0x0000018c6cfb0000, 0x0000018c74280000]
+CodeHeap 'profiled nmethods': size=120000Kb used=203Kb max_used=203Kb free=119796Kb
+ bounds [0x0000018c65280000, 0x0000018c654f0000, 0x0000018c6c7b0000]
+CodeHeap 'non-nmethods': size=5696Kb used=1202Kb max_used=1216Kb free=4493Kb
+ bounds [0x0000018c6c7b0000, 0x0000018c6ca20000, 0x0000018c6cd40000]
+CodeCache: size=245760Kb, used=1484Kb, max_used=1498Kb, free=244274Kb
+ total_blobs=604, nmethods=244, adapters=265, full_count=0
+Compilation: enabled, stopped_count=0, restarted_count=0
+
+Compilation events (20 events):
+Event: 0.044 Thread 0x0000018c7c03dc20  157       1       java.lang.module.ResolvedModule::configuration (5 bytes)
+Event: 0.044 Thread 0x0000018c7c03dc20 nmethod 157 0x0000018c6cd4cf08 code [0x0000018c6cd4d000, 0x0000018c6cd4d0c8]
+Event: 0.044 Thread 0x0000018c7c03dc20  160       1       java.lang.module.ModuleDescriptor$Provides::service (5 bytes)
+Event: 0.044 Thread 0x0000018c7c03dc20 nmethod 160 0x0000018c6cd4d208 code [0x0000018c6cd4d300, 0x0000018c6cd4d3c8]
+Event: 0.044 Thread 0x0000018c7c03dc20  150       1       java.lang.module.ModuleDescriptor$Version::toString (5 bytes)
+Event: 0.044 Thread 0x0000018c7c03dc20 nmethod 150 0x0000018c6cd4d508 code [0x0000018c6cd4d600, 0x0000018c6cd4d6c8]
+Event: 0.044 Thread 0x0000018c7c03dc20  161       3       java.lang.AbstractStringBuilder::ensureCapacityInternal (39 bytes)
+Event: 0.045 Thread 0x0000018c7c03dc20 nmethod 161 0x0000018c6529d888 code [0x0000018c6529d9c0, 0x0000018c6529dbf0]
+Event: 0.045 Thread 0x0000018c7c03dc20  164       3       java.lang.Math::min (11 bytes)
+Event: 0.045 Thread 0x0000018c7c03dc20 nmethod 164 0x0000018c6529dc08 code [0x0000018c6529dd20, 0x0000018c6529de50]
+Event: 0.045 Thread 0x0000018c7c03dc20  165       3       jdk.internal.util.Preconditions::checkFromToIndex (24 bytes)
+Event: 0.045 Thread 0x0000018c7c03dc20 nmethod 165 0x0000018c6529df08 code [0x0000018c6529e020, 0x0000018c6529e1d8]
+Event: 0.045 Thread 0x0000018c7c03dc20  167       3       java.lang.StringLatin1::canEncode (17 bytes)
+Event: 0.045 Thread 0x0000018c7c03dc20 nmethod 167 0x0000018c6529e208 code [0x0000018c6529e320, 0x0000018c6529e488]
+Event: 0.045 Thread 0x0000018c7c03dc20  166       3       java.lang.String::checkBoundsBeginEnd (11 bytes)
+Event: 0.045 Thread 0x0000018c7c03dc20 nmethod 166 0x0000018c6529e508 code [0x0000018c6529e640, 0x0000018c6529e860]
+Event: 0.045 Thread 0x0000018c7c03dc20  169       3       java.lang.StringLatin1::indexOfChar (33 bytes)
+Event: 0.045 Thread 0x0000018c7c03dc20 nmethod 169 0x0000018c6529e888 code [0x0000018c6529e9a0, 0x0000018c6529ebb0]
+Event: 0.045 Thread 0x0000018c7c03dc20  168       3       java.lang.StringLatin1::indexOf (17 bytes)
+Event: 0.046 Thread 0x0000018c7c03dc20 nmethod 168 0x0000018c6529ec08 code [0x0000018c6529ed40, 0x0000018c6529f0a8]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (3 events):
+Event: 0.006 Loaded shared library E:\Apache NetBeans\jdk\bin\java.dll
+Event: 0.026 Loaded shared library E:\Apache NetBeans\jdk\bin\jsvml.dll
+Event: 0.046 Loaded shared library E:\Apache NetBeans\jdk\bin\jimage.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (6 events):
+Event: 0.039 Loading class jdk/internal/module/ModuleReferenceImpl$CachedHash
+Event: 0.039 Loading class jdk/internal/module/ModuleReferenceImpl$CachedHash done
+Event: 0.045 Loading class jdk/internal/vm/PostVMInitHook
+Event: 0.045 Loading class jdk/internal/vm/PostVMInitHook done
+Event: 0.045 Loading class jdk/internal/module/ModulePatcher$PatchedModuleReader
+Event: 0.045 Loading class jdk/internal/module/ModulePatcher$PatchedModuleReader done
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (2 events):
+Event: 0.039 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 0.039 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (10 events):
+Event: 0.017 Thread 0x0000018c5c77ade0 Thread added: 0x0000018c5c77ade0
+Event: 0.025 Thread 0x0000018c5c77ade0 Thread added: 0x0000018c7c024b70
+Event: 0.025 Thread 0x0000018c5c77ade0 Thread added: 0x0000018c7c0254b0
+Event: 0.025 Thread 0x0000018c5c77ade0 Thread added: 0x0000018c7c02a380
+Event: 0.025 Thread 0x0000018c5c77ade0 Thread added: 0x0000018c7c02daf0
+Event: 0.025 Thread 0x0000018c5c77ade0 Thread added: 0x0000018c7c02e9d0
+Event: 0.025 Thread 0x0000018c5c77ade0 Thread added: 0x0000018c7c031510
+Event: 0.025 Thread 0x0000018c5c77ade0 Thread added: 0x0000018c7c032d90
+Event: 0.025 Thread 0x0000018c5c77ade0 Thread added: 0x0000018c7c03dc20
+Event: 0.045 Thread 0x0000018c5c77ade0 Thread added: 0x0000018c4518a6e0
+
+
+Dynamic libraries:
+0x00007ff67e770000 - 0x00007ff67e778000 	E:\Apache NetBeans\jdk\bin\javac.exe
+0x00007ffaf5d10000 - 0x00007ffaf5f27000 	C:\windows\SYSTEM32\ntdll.dll
+0x00007ffaf5a40000 - 0x00007ffaf5b04000 	C:\windows\System32\KERNEL32.DLL
+0x00007ffaf3160000 - 0x00007ffaf3517000 	C:\windows\System32\KERNELBASE.dll
+0x00007ffaf3920000 - 0x00007ffaf3a31000 	C:\windows\System32\ucrtbase.dll
+0x00007ffa7dce0000 - 0x00007ffa7dcf6000 	E:\Apache NetBeans\jdk\bin\jli.dll
+0x00007ffa7dd60000 - 0x00007ffa7dd7e000 	E:\Apache NetBeans\jdk\bin\VCRUNTIME140.dll
+0x00007ffaf3eb0000 - 0x00007ffaf405f000 	C:\windows\System32\USER32.dll
+0x00007ffaf3830000 - 0x00007ffaf3856000 	C:\windows\System32\win32u.dll
+0x00007ffaf4160000 - 0x00007ffaf4189000 	C:\windows\System32\GDI32.dll
+0x00007ffacf1e0000 - 0x00007ffacf473000 	C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\COMCTL32.dll
+0x00007ffaf3520000 - 0x00007ffaf3638000 	C:\windows\System32\gdi32full.dll
+0x00007ffaf5020000 - 0x00007ffaf50c7000 	C:\windows\System32\msvcrt.dll
+0x00007ffaf3020000 - 0x00007ffaf30ba000 	C:\windows\System32\msvcp_win.dll
+0x00007ffaf4110000 - 0x00007ffaf4141000 	C:\windows\System32\IMM32.DLL
+0x00007ffae99c0000 - 0x00007ffae99cc000 	E:\Apache NetBeans\jdk\bin\vcruntime140_1.dll
+0x00007ffa679c0000 - 0x00007ffa67a4d000 	E:\Apache NetBeans\jdk\bin\msvcp140.dll
+0x00007ffa57a00000 - 0x00007ffa5887c000 	E:\Apache NetBeans\jdk\bin\server\jvm.dll
+0x00007ffaf5550000 - 0x00007ffaf5602000 	C:\windows\System32\ADVAPI32.dll
+0x00007ffaf56c0000 - 0x00007ffaf5768000 	C:\windows\System32\sechost.dll
+0x00007ffaf3130000 - 0x00007ffaf3158000 	C:\windows\System32\bcrypt.dll
+0x00007ffaf42c0000 - 0x00007ffaf43d4000 	C:\windows\System32\RPCRT4.dll
+0x00007ffaf4240000 - 0x00007ffaf42b1000 	C:\windows\System32\WS2_32.dll
+0x00007ffaf2e40000 - 0x00007ffaf2e8d000 	C:\windows\SYSTEM32\POWRPROF.dll
+0x00007ffae8ad0000 - 0x00007ffae8b04000 	C:\windows\SYSTEM32\WINMM.dll
+0x00007ffae3930000 - 0x00007ffae393a000 	C:\windows\SYSTEM32\VERSION.dll
+0x00007ffaf2d20000 - 0x00007ffaf2d33000 	C:\windows\SYSTEM32\UMPDC.dll
+0x00007ffaf1fd0000 - 0x00007ffaf1fe8000 	C:\windows\SYSTEM32\kernel.appcore.dll
+0x00007ffae9770000 - 0x00007ffae977a000 	E:\Apache NetBeans\jdk\bin\jimage.dll
+0x00007ffaf06a0000 - 0x00007ffaf08d2000 	C:\windows\SYSTEM32\DBGHELP.DLL
+0x00007ffaf3a40000 - 0x00007ffaf3dce000 	C:\windows\System32\combase.dll
+0x00007ffaf3dd0000 - 0x00007ffaf3ea7000 	C:\windows\System32\OLEAUT32.dll
+0x00007ffacf5d0000 - 0x00007ffacf602000 	C:\windows\SYSTEM32\dbgcore.DLL
+0x00007ffaf37b0000 - 0x00007ffaf382b000 	C:\windows\System32\bcryptPrimitives.dll
+0x00007ffa7dd00000 - 0x00007ffa7dd1e000 	E:\Apache NetBeans\jdk\bin\java.dll
+0x00007ffaf5790000 - 0x00007ffaf5935000 	C:\windows\System32\ole32.dll
+0x00007ffaf45b0000 - 0x00007ffaf4e19000 	C:\windows\System32\SHELL32.dll
+0x00007ffaf0f40000 - 0x00007ffaf183f000 	C:\windows\SYSTEM32\windows.storage.dll
+0x00007ffaf0e00000 - 0x00007ffaf0f3f000 	C:\windows\SYSTEM32\wintypes.dll
+0x00007ffaf5940000 - 0x00007ffaf5a39000 	C:\windows\System32\SHCORE.dll
+0x00007ffaf4fb0000 - 0x00007ffaf500e000 	C:\windows\System32\shlwapi.dll
+0x00007ffaf2f50000 - 0x00007ffaf2f77000 	C:\windows\SYSTEM32\profapi.dll
+0x00007ffa63870000 - 0x00007ffa63947000 	E:\Apache NetBeans\jdk\bin\jsvml.dll
+
+JVMTI agents: none
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;E:\Apache NetBeans\jdk\bin;C:\windows\SYSTEM32;C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955;E:\Apache NetBeans\jdk\bin\server
+
+VM Arguments:
+jvm_args: -Dapplication.home=E:\Apache NetBeans\jdk --add-modules=ALL-DEFAULT -Xms8m -Djdk.module.main=jdk.compiler 
+java_command: jdk.compiler/com.sun.tools.javac.Main -d C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\build\classes -classpath C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\build\classes;C:\Users\haidy\Downloads\jcalendar-0.8.1.zip;C:\Users\haidy\Downloads\jcalendar-0.8.1\jcalendar-0.8.1.jar -sourcepath C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\src -target 21 -encoding UTF-8 -g -processorpath C:\Users\haidy\Downloads\jcalendar-0.8.1.zip;C:\Users\haidy\Downloads\jcalendar-0.8.1\jcalendar-0.8.1.jar;C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\build\empty -s C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\build\generated-sources\ap-source-output -source 21 C:\Users\haidy\OneDrive\Documents\NetBeansProjects\Bank_Managment_System\src\signinpage3.java
+java_class_path (initial): <not set>
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+   size_t InitialHeapSize                          = 8388608                                   {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MarkStackSizeMax                         = 536870912                                 {product} {ergonomic}
+   size_t MaxHeapSize                              = 4202692608                                {product} {ergonomic}
+   size_t MaxNewSize                               = 2520776704                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {command line}
+    uintx NonNMethodCodeHeapSize                   = 5832704                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122945536                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122880000                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4202692608                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-23
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;E:\Program Files\Java\jdk-23\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\haidy\AppData\Local\Microsoft\WindowsApps;E:\flutter_windows_3.27.3-stable\flutter\bin;E:\Microsoft VS Code\bin;C:\Users\haidy\AppData\Local\GitHubDesktop\bin
+USERNAME=haidy
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 186 Stepping 3, GenuineIntel
+TMP=C:\Users\haidy\AppData\Local\Temp
+TEMP=C:\Users\haidy\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.3958)
+OS uptime: 5 days 18:50 hours
+Hyper-V role detected
+
+CPU: total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 186 stepping 3 microcode 0x4121, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, clwb, hv, serialize, rdtscp, rdpid, fsrm, gfni, f16c, cet_ibt, cet_ss
+Processor Information for processor 0
+  Max Mhz: 1700, Current Mhz: 1700, Mhz Limit: 1700
+Processor Information for processor 1
+  Max Mhz: 1700, Current Mhz: 1700, Mhz Limit: 1700
+Processor Information for processor 2
+  Max Mhz: 1700, Current Mhz: 1700, Mhz Limit: 1700
+Processor Information for processor 3
+  Max Mhz: 1700, Current Mhz: 1700, Mhz Limit: 1700
+Processor Information for processor 4
+  Max Mhz: 1700, Current Mhz: 1200, Mhz Limit: 1190
+Processor Information for processor 5
+  Max Mhz: 1700, Current Mhz: 1200, Mhz Limit: 1190
+Processor Information for processor 6
+  Max Mhz: 1700, Current Mhz: 1200, Mhz Limit: 1190
+Processor Information for processor 7
+  Max Mhz: 1700, Current Mhz: 1200, Mhz Limit: 1190
+Processor Information for processor 8
+  Max Mhz: 1700, Current Mhz: 1200, Mhz Limit: 1190
+Processor Information for processor 9
+  Max Mhz: 1700, Current Mhz: 1200, Mhz Limit: 1190
+Processor Information for processor 10
+  Max Mhz: 1700, Current Mhz: 1200, Mhz Limit: 1190
+Processor Information for processor 11
+  Max Mhz: 1700, Current Mhz: 1200, Mhz Limit: 1190
+
+Memory: 4k page, system-wide physical 16027M (6892M free)
+TotalPageFile size 18075M (AvailPageFile size 5M)
+current process WorkingSet (physical memory assigned to process): 41M, peak: 41M
+current process commit charge ("private bytes"): 94M, peak: 94M
+
+vm_info: OpenJDK 64-Bit Server VM (24.0.2+12) for windows-amd64 JRE (24.0.2+12) (Zulu24.32+13-CA), built on 2025-07-11T12:45:44Z with MS VC++ 17.1 (VS2022)
+
+END.

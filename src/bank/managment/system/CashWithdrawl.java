@@ -159,7 +159,6 @@ private String cardNumber;
     pst3.setString(1, cardNumber);
     pst3.setDouble(2, amount);
     pst3.executeUpdate();
-
     JOptionPane.showMessageDialog(null, "Withdrawal Successful");
     txtCash.setText("");
 

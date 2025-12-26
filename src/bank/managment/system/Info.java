@@ -295,7 +295,7 @@ private void loadClientInfo(String cardNumber){
         String query = "SELECT cu.*, u.card, u.pin, u.balance " +
                        "FROM customers cu " +
                        "JOIN users u  ON cu.id = u.customer_id " +
-                       "WHERE u.card=?";
+                       "WHERE users.card=?";
 
         java.sql.PreparedStatement pst = c.c.prepareStatement(query);
         pst.setString(1, cardNumber);
